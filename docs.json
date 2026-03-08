@@ -1,0 +1,86 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Helixia",
+  "theme": "maple",
+  "colors": {
+    "primary": "#0D7377",
+    "light": "#10B981",
+    "dark": "#0D7377"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "commands"
+            ]
+          },
+          {
+            "group": "Economy",
+            "pages": [
+              "economy/pokecoins",
+              "economy/claiming",
+              "economy/mystery-boxes",
+              "economy/transferring"
+            ]
+          },
+          {
+            "group": "Daily Quests",
+            "pages": [
+              "economy/daily-quests",
+              "economy/quest-streaks",
+              "economy/weekend-bonus"
+            ]
+          },
+          {
+            "group": "Events",
+            "pages": [
+              "events/overview",
+              "events/roll-event",
+              "events/tea-event",
+              "events/bingo-event"
+            ]
+          },
+          {
+            "group": "Gambling",
+            "pages": [
+              "gambling/overview",
+              "gambling/getting-started",
+              "gambling/high-low",
+              "gambling/death-roll",
+              "gambling/buckshot-roulette",
+              "gambling/pokemon-rand",
+              "gambling/formats",
+              "gambling/profiles-and-leaderboards"
+            ]
+          },
+          {
+            "group": "Progression",
+            "pages": [
+              "progression/achievements",
+              "progression/leveling",
+              "progression/leaderboards"
+            ]
+          },
+          {
+            "group": "Community",
+            "pages": [
+              "community/vanity",
+              "community/giveaways",
+              "community/suggestions",
+              "community/server-boosting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footerSocials": {
+    "discord": "https://discord.gg/helixia"
+  }
+}
