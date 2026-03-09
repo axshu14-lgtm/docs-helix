@@ -1,10 +1,10 @@
 ---
 title: "How to Sell in Auctions"
-description: "A complete guide to registering your Pokémon, setting a starting bid, and navigating your auction slot."
+description: "A complete guide to registering your Pokémon and navigating your auction slot."
 icon: "tag"
 ---
 
-Selling your Pokémon in a Helixia auction is one of the best ways to earn a large amount of Pokécoins quickly. This guide covers everything you need to do — from preparing your Pokémon before the session to posting your live info when it's your turn to go.
+Selling your Pokémon in a Helixia auction is one of the best ways to earn a large amount of Pokécoins quickly. This guide covers everything you need to do — from joining the temporary server to posting your live info when it's your turn to go.
 
 ---
 
@@ -18,36 +18,15 @@ Before you can register for an auction, make sure you meet all of the following:
 
 ---
 
-## Step 1 — Set Your Pokémon's Nickname to Your Starting Bid
+## Starting Bid & Increments
 
-Before the auction session begins, you need to **set a nickname on the Pokémon you want to sell** in Pokétwo. This nickname is how the bot reads your Starting Bid (SB).
+All auctions in Helixia use a **fixed starting bid of 1,000 pc** for every Pokémon, regardless of the species or IVs. There is no way to set a custom starting bid and **no nickname is required** on your Pokémon before registering.
 
-Your SB must be a valid amount in the format `10k`, `50k`, `100k`, etc.
-
-**Valid SB range:** 1,000 pc minimum — 100,000 pc maximum
-
-<Note>
-  The starting bid is embedded in the Pokémon's nickname. If your Pokémon has no valid SB in its nickname, or the amount is outside the valid range, your submission will be silently ignored and you will not receive a slot.
-</Note>
-
-**How to set the nickname in Pokétwo:**
-```
-@poketwo#8236 nickname <pokémon number> <your SB>
-```
-For example, to set a 10,000 pc starting bid on Pokémon number 5785:
-```
-@poketwo#8236 nickname 5785 10k
-```
-
-The nickname just needs to **contain** the SB value — you don't need to put only the number. Something like `10k goated` works fine. The bot reads the last valid numeric value it finds in the nickname.
-
-<Tip>
-  Set your Pokémon's nickname before the session starts so you're ready the moment registration opens. Scrambling to set a nickname after the channel unlocks means you could miss your slot.
-</Tip>
+The bid increment also starts at **1,000 pc** for bids under 1,000,000 pc, then scales up at higher amounts. See the [Bidding guide](/auctions/bidding) for the full increment table.
 
 ---
 
-## Step 2 — Watch for the Announcement in the Main Server
+## Step 1 — Watch for the Announcement in the Main Server
 
 When a session is about to begin, an announcement will be posted in the main Helixia server's auction announcement channel. This announcement:
 
@@ -59,7 +38,7 @@ Click the button to join the temporary server. Once you're inside, navigate to t
 
 ---
 
-## Step 3 — Submit Your Pokémon During Registration
+## Step 2 — Submit Your Pokémon During Registration
 
 When registration opens, the auction-register channel will unlock and a message will appear explaining how long the window is and how many slots are available.
 
@@ -74,7 +53,7 @@ When registration opens, the auction-register channel will unlock and a message 
     For example: `@poketwo#8236 i 5785`
   </Step>
   <Step title="Reply to your own info embed">
-    Pokétwo will respond with the info embed for your Pokémon. You need to **reply directly to that Pokétwo response** (not to your original command). This reply is your submission — the bot reads it as a registration.
+    Pokétwo will respond with the info embed for your Pokémon. You need to **reply directly to that Pokétwo response** (not to your original command message). This reply is your submission — the bot reads it as a registration.
   </Step>
   <Step title="Wait for confirmation">
     The bot will reply to your submission message confirming your slot has been secured, along with your randomly assigned slot number once randomization completes.
@@ -100,7 +79,7 @@ The registration message posted at the start of the window will tell you which m
 
 ---
 
-## Step 4 — Slot Randomization
+## Step 3 — Slot Randomization
 
 Once registration closes (either because all slots filled or the time window expired), the bot **randomly shuffles the order** of all accepted submissions using a fair algorithm. This means:
 
@@ -119,7 +98,7 @@ You will receive a **DM** from the bot confirming:
 
 ---
 
-## Step 5 — Be Ready When Your Slot Is Called
+## Step 4 — Be Ready When Your Slot Is Called
 
 When the auction reaches your slot in the 💰〢auction-bid channel, the bot will:
 
@@ -141,7 +120,7 @@ If you already know your Pokémon's display number, use that directly. The bot w
 
 ---
 
-## Step 6 — The Community Vote
+## Step 5 — The Community Vote
 
 Before bidding opens on your slot, a **15-second community vote** takes place where members decide if your Pokémon is worth auctioning. If **60% or more** of voters vote No, your slot is skipped.
 
@@ -153,11 +132,11 @@ See the [Community Voting guide](/auctions/community-vote) for full details on h
 
 ---
 
-## Step 7 — Bidding on Your Pokémon
+## Step 6 — Bidding on Your Pokémon
 
 If the vote passes, **bidding opens** and the channel unlocks for all members to place bids. You do not need to do anything during this phase — just watch as the bids come in.
 
-- Bidding lasts **60 seconds**, but the timer **resets with every new valid bid**, so popular Pokémon can run much longer
+- Bidding starts at **1,000 pc** and the timer lasts **60 seconds**, but the timer **resets with every new valid bid**, so popular Pokémon can run much longer
 - You **cannot bid on your own Pokémon**
 - When the timer expires, the highest bidder wins
 
@@ -176,8 +155,8 @@ Because of the community voting system, low-quality Pokémon risk getting voted 
   <Accordion title="Rare or popular species perform better">
     Legendaries, pseudo-legendaries, starter Pokémon, and fan-favourite species attract more bidders. A Pokémon with decent IVs but a highly desirable species can still sell very well.
   </Accordion>
-  <Accordion title="Set a fair starting bid">
-    An SB that's too high relative to the Pokémon's actual value will result in zero bids and an unsold slot. Research what similar Pokémon have sold for using `/auclb` biggest purchases and set your SB accordingly.
+  <Accordion title="Shiny Pokémon are almost always welcome">
+    Shiny variants tend to pass the community vote regardless of IVs due to their rarity and collector appeal, and often attract very competitive bids.
   </Accordion>
   <Accordion title="Don't waste slots on junk">
     Members who repeatedly register low-quality Pokémon that get voted out by the community may face consequences. The voting system exists specifically to protect auction quality, and vote logs are reviewed by staff.

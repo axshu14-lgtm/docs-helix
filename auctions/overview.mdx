@@ -18,11 +18,11 @@ Unlike a marketplace where listings sit passively, Helixia auctions are **live e
 
 There are **three auction sessions every day**, all timed in IST (Indian Standard Time):
 
-| Session | Time (IST) |
-|---|---|
-| Session 1 | 6:00 PM |
-| Session 2 | 9:00 PM |
-| Session 3 — Final | 11:30 PM |
+| Session           | Time (IST) |
+| ----------------- | ---------- |
+| Session 1         | 6:00 PM    |
+| Session 2         | 9:00 PM    |
+| Session 3 — Final | 11:30 PM   |
 
 Each session runs independently, with its own registration and bidding phase. You can participate in one session, two, or all three — entirely up to you.
 
@@ -34,20 +34,20 @@ Each session runs independently, with its own registration and bidding phase. Yo
 
 ## The Temporary Auction Server
 
-Helixia auctions don't happen in the main server. Instead, a **fresh temporary Discord server** is created every morning at **8:00 AM IST** exclusively for that day's auctions. All three sessions take place inside this temporary server.
+Helixia auctions don't happen in the main server. Instead, a **fresh temporary Discord server** is created every morning at **6:00 PM IST** exclusively for that day's auctions. All three sessions take place inside this temporary server.
 
-When a session is about to begin, an announcement is posted in the main Helixia server's auction channel with a **"Join Auction Server"** button. Click it to get into the temporary server and participate.
+When a session is about to begin, an announcement is posted in the main Helixia server's [auction announcement channel](https://discord.com/channels/1459854752580898868/1461730554738249811) with a **"Join Auction Server"** button. Click it to get into the temporary server and participate.
 
 The temporary server has four channels:
 
-| Channel | Purpose |
-|---|---|
+| Channel             | Purpose                                                |
+| ------------------- | ------------------------------------------------------ |
 | 📝〢auction-register | Where sellers submit their Pokémon during registration |
-| 💰〢auction-bid | Where all live bidding happens |
-| ⚙️〢commands | Where you can use public bot commands |
-| 🛡️〢staff-chat | Staff only — not visible to members |
+| 💰〢auction-bid      | Where all live bidding happens                         |
+| ⚙️〢commands         | Where you can use public bot commands                  |
+| 🛡️〢staff-chat      | Staff only — not visible to members                    |
 
-Once all three sessions are done and every trade from the final session is completed, the temporary server is automatically **deleted**. A brand new one is created the next morning and the cycle repeats.
+Once all three sessions are done and every trade from the final session is completed, the temporary server is automatically **deleted**. A brand new one is created the next day and the cycle repeats.
 
 <Note>
   The temporary server is not a permanent server you stay in. It is created fresh each day, and when you join using the button in the main server announcement, you're joining that day's session specifically. You will need to click the Join button again for future sessions on other days.
@@ -78,13 +78,13 @@ Here's the complete lifecycle of a single auction session from start to finish:
     About 2 minutes before registration opens, an announcement is posted in the main Helixia server pinging the Auction role. It includes a **Join Auction Server** button that takes you to the temporary server.
   </Step>
   <Step title="Registration opens in the temp server">
-    The 📝〢auction-register channel opens. Sellers who want to auction a Pokémon submit it here by posting their Pokétwo info command (see the Selling guide for exact instructions). There are a limited number of slots available, filled on a first-come basis.
+    The auction-register channel opens. Sellers who want to auction a Pokémon submit it here by posting their Pokétwo info command (see the Selling guide for exact instructions). There are a limited number of slots available, filled on a first-come basis.
   </Step>
   <Step title="Slot order is randomized">
     Once registration closes, all accepted submissions are **randomly shuffled** using a fair randomization algorithm. This means submitting early or late gives you no advantage — every seller gets an equally random position. Each seller receives a DM confirming their slot number.
   </Step>
   <Step title="Live bidding begins">
-    The 💰〢auction-bid channel opens. Each Pokémon is auctioned one by one. Before bidding starts on each slot, a 15-second **community vote** takes place where members decide if the Pokémon is worth auctioning. If the vote passes, bidding opens and anyone can place bids.
+    The auction-bid channel opens. Each Pokémon is auctioned one by one. Before bidding starts on each slot, a 15-second **community vote** takes place where members decide if the Pokémon is worth auctioning. If the vote passes, bidding opens and anyone can place bids.
   </Step>
   <Step title="Highest bidder wins">
     When the bidding timer runs out with no new bids, the auction closes. The highest bidder wins the Pokémon. A private trade thread is automatically created between the buyer and seller to complete the Pokétwo trade.
@@ -99,19 +99,19 @@ Here's the complete lifecycle of a single auction session from start to finish:
 ## Explore the Full Auction Guides
 
 <CardGroup cols={2}>
-  <Card title="How to Sell" icon="tag" href="/auctions/selling">
+  <Card icon="tag" href="/auctions/selling" title="How to Sell">
     Register your Pokémon, set a starting bid, and get your slot.
   </Card>
-  <Card title="How to Bid" icon="gavel" href="/auctions/bidding">
+  <Card icon="gavel" href="/auctions/bidding" title="How to Bid">
     Bid mechanics, increment rules, and how to win a slot.
   </Card>
-  <Card title="Community Voting" icon="thumbs-up" href="/auctions/community-vote">
+  <Card icon="thumbs-up" href="/auctions/community-vote" title="Community Voting">
     Understand the pre-bidding vote and how it affects slots.
   </Card>
-  <Card title="Completing a Trade" icon="handshake" href="/auctions/completing-a-trade">
+  <Card icon="handshake" href="/auctions/completing-a-trade" title="Completing a Trade">
     What happens after you win — the private trade thread process.
   </Card>
-  <Card title="Stats & Leaderboards" icon="chart-bar" href="/auctions/stats-and-leaderboards">
+  <Card icon="chart-bar" href="/auctions/stats-and-leaderboards" title="Stats & Leaderboards">
     Track your auction history, profile, and rankings.
   </Card>
 </CardGroup>
