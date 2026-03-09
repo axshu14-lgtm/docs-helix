@@ -1,0 +1,163 @@
+---
+title: "How to Bid in Auctions"
+description: "Everything about placing bids — the rules, increment system, confirmation flow, and how to win."
+icon: "gavel"
+---
+
+Bidding in a Helixia auction is fast, competitive, and real-time. This guide covers every rule and mechanic you need to know so you can participate confidently and avoid common mistakes that get bids rejected.
+
+---
+
+## Requirements to Bid
+
+The same eligibility rules that apply to sellers also apply to bidders:
+
+- **Level 5 or above** in the main Helixia server. The bot checks this on every bid. If you don't have the Level 5 role, your bid message will be silently rejected.
+- **Member of the main Helixia server.** Checked automatically even when bidding from the temporary server.
+- **Not blacklisted.** Blacklisted users cannot join the temporary server at all.
+
+---
+
+## How to Place a Bid
+
+When a Pokémon's bidding phase is open, the 💰〢auction-bid channel unlocks and you can place bids by **simply typing the amount**. Nothing else — just the number.
+
+Valid formats:
+
+| What you type | What it means |
+|---|---|
+| `10000` | 10,000 pc |
+| `10,000` | 10,000 pc |
+| `10k` | 10,000 pc |
+| `1m` | 1,000,000 pc |
+| `2.5m` | Not valid — use `2500k` or `2500000` |
+
+<Warning>
+  Your message must contain **only** the bid amount — nothing else. Bids like `10k please`, `10k pc`, or `10k!` will be rejected because of the extra text. Type only the number, with an optional `k` or `m` suffix.
+</Warning>
+
+---
+
+## The Starting Bid (SB)
+
+Every Pokémon enters bidding with a **Starting Bid** set by the seller. Your first bid must be **at or above** the starting bid. The bot will silently ignore any bid below it.
+
+The SB is displayed clearly in the bidding embed at the top of each slot. Make sure you see the SB before placing your first bid.
+
+---
+
+## Bid Increment Rules
+
+The minimum amount your bid must exceed the current highest bid by depends on where the current highest bid sits. This is a **dynamic increment system**:
+
+| Current Highest Bid | Minimum Increment |
+|---|---|
+| Below 1,000,000 pc | **1,000 pc** |
+| 1,000,000 pc — 4,999,999 pc | **50,000 pc** |
+| 5,000,000 pc and above | **100,000 pc** |
+
+The bot will show the **minimum next bid** after every accepted bid so you always know exactly what you need to place.
+
+**Example:** If the current highest bid is 800,000 pc, the minimum next bid is 801,000 pc. If the bid rises to 1,200,000 pc, the minimum next bid becomes 1,250,000 pc.
+
+<Note>
+  You are always free to bid higher than the minimum increment. There is no rule against jumping the bid by a large amount — many competitive bidders do this intentionally to deter others.
+</Note>
+
+---
+
+## High Bid Confirmation (Bids of 1M pc or More)
+
+For bids of **1,000,000 pc or more**, the bot will ask you to **confirm your bid** before it is accepted. A confirmation message will appear with a **Yes** and **No** button.
+
+- You have **30 seconds** to click Yes to confirm
+- If you don't confirm in time, the bid is automatically cancelled
+- If someone else places a higher bid while you're confirming, your bid is rejected even if you click Yes
+
+This system exists to prevent accidental misbids at high amounts. **Misbids will not be honored** — always double-check your amount before confirming.
+
+<Warning>
+  If you place a high bid and then click Yes to confirm, you are committing to that amount. Do not bid amounts you are not prepared to pay. Refusing to complete a trade after winning is a serious violation.
+</Warning>
+
+---
+
+## The Bidding Timer
+
+Each slot has a **60-second countdown**. The timer starts when bidding opens and **resets to 60 seconds with every valid new bid**. This means:
+
+- Low-interest Pokémon may sell in as little as 60 seconds
+- Highly competitive Pokémon can run for many minutes if bids keep coming in
+- A **"Final Seconds"** warning is posted when ~5 seconds remain with no new bids
+- A **10-second reminder** is also periodically sent showing the current highest bid and minimum next bid
+
+When the 60 seconds fully expire with no new bid, the auction closes and the highest bidder wins.
+
+---
+
+## Bidding Rules & Restrictions
+
+<AccordionGroup>
+  <Accordion title="You cannot outbid yourself">
+    If you are currently the highest bidder, you cannot place another bid. You must wait for someone else to outbid you before you can bid again.
+  </Accordion>
+  <Accordion title="The seller cannot bid on their own Pokémon">
+    The owner of the Pokémon being auctioned is blocked from placing bids on their own slot. This is enforced automatically.
+  </Accordion>
+  <Accordion title="Maximum bid cap">
+    No bid may exceed **30,000,000 pc (30M)**. Any bid above this amount is automatically rejected.
+  </Accordion>
+  <Accordion title="Bids must be the entire message">
+    Your bid message must contain only the amount — no extra words, punctuation, or text. Anything other than a plain number (with optional k/m) will be ignored.
+  </Accordion>
+  <Accordion title="Malformed numbers are rejected">
+    Formats like `37,1k` (a comma followed by a single digit before a suffix) are rejected as malformed. Use clean numbers: `37k`, `37100`, `37,100`.
+  </Accordion>
+  <Accordion title="You must be in the main Helixia server">
+    If you are not a member of the main Helixia server, your bid will be rejected. The bot cross-checks your membership on every bid attempt.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## After the Bidding Closes
+
+When the timer expires and you are the highest bidder:
+
+1. The bot posts a **"Sold!"** embed naming you as the buyer with the final price
+2. A **private trade thread** is automatically created between you and the seller in the bid channel
+3. You will receive a **DM** confirming your win and directing you to the thread
+
+The auction immediately moves on to the next slot while your trade thread runs separately in the background.
+
+See the [Completing a Trade guide](/auctions/completing-a-trade) for exactly what to do inside the trade thread.
+
+---
+
+## What Happens if a Pokémon Gets No Bids?
+
+If the 60-second timer expires without a single valid bid being placed, the Pokémon is marked as **Unsold**. The seller receives nothing, the slot is logged as unsold, and the auction moves to the next registered Pokémon.
+
+This typically happens when:
+- The starting bid is set too high relative to the Pokémon's perceived value
+- The Pokémon is not desirable enough to attract any bidders
+- The session has low attendance
+
+---
+
+## Tips for Winning
+
+<AccordionGroup>
+  <Accordion title="Watch the minimum increment as the price rises">
+    The increment jumps significantly at 1M and 5M. Factor this in when deciding whether to keep bidding — the price can escalate very quickly in those ranges.
+  </Accordion>
+  <Accordion title="Use round numbers to signal intent">
+    Bidding something like `1,500,000` instead of `1,050,000` when the minimum is `1,050,000` signals strong interest and can discourage other bidders from continuing.
+  </Accordion>
+  <Accordion title="Have your bid ready before the warning appears">
+    The "Final Seconds" warning appears with only ~5 seconds left. If you plan to bid last-minute, have your message typed and ready to send the moment you see the warning — don't start typing after it appears.
+  </Accordion>
+  <Accordion title="Know your limit before you start">
+    It's easy to get caught up in a bidding war and go over budget. Decide your maximum amount before bidding begins so you don't commit to more than you can trade.
+  </Accordion>
+</AccordionGroup>

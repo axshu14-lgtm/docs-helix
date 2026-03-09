@@ -35,6 +35,17 @@
             ]
           },
           {
+            "group": "Auctions",
+            "pages": [
+              "auctions/overview",
+              "auctions/selling",
+              "auctions/bidding",
+              "auctions/community-vote",
+              "auctions/completing-a-trade",
+              "auctions/stats-and-leaderboards"
+            ]
+          },
+          {
             "group": "Events",
             "pages": [
               "events/overview",
