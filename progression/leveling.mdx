@@ -1,50 +1,114 @@
 ---
-title: "Leveling"
-description: "How the leveling system works and what rewards you earn at each level."
+title: "Leveling & Level-Up Rewards"
+description: "How the leveling system works, what you earn at each milestone, and what to do if something goes wrong."
 icon: "arrow-up"
 ---
 
-The leveling system in Helixia is tied to Discord roles. As you gain experience and reach new levels, you receive level roles — and each new level role comes with a one-time Pokécoin reward.
+The leveling system in Helixia rewards you for being an active member of the community. As you gain experience and reach new level milestones, you receive **one-time Pokécoin rewards** automatically added to your balance — the higher the level, the bigger the payout.
 
 ## How Leveling Works
 
-Leveling is managed through the server's level roles. When you reach a new level milestone and receive the corresponding role, the bot detects this and awards you a Pokécoin bonus.
+Leveling in Helixia is powered by the **Arcane bot**. Arcane tracks your activity and experience, and when you hit a new level threshold it assigns you the corresponding level role in the server. The Helixia bot watches for these role assignments — the moment it detects you've received a new level role, it automatically credits your Pokécoin reward.
 
-Each level role grants a **one-time reward** that is automatically added to your balance. You'll receive a notification when this happens.
+This means the flow works like this:
 
-## Viewing Level Rewards
+<Steps>
+  <Step title="You gain XP">
+    Chat and stay active in the server. Arcane tracks your experience in the background.
+  </Step>
+  <Step title="Arcane assigns your level role">
+    When you reach a milestone level, Arcane automatically gives you the corresponding level role and announces your level-up.
+  </Step>
+  <Step title="Helixia detects the new role">
+    The Helixia bot sees that you've received a new level role and triggers the reward for that level.
+  </Step>
+  <Step title="Your Pokécoins are credited">
+    The reward is instantly added to your Helixia balance. You'll receive a notification in the server confirming the amount you earned.
+  </Step>
+</Steps>
 
-Run `.leveluplist` (or `.lvllist`) to see all configured level-up rewards. The output lists each level and its corresponding Pokécoin reward.
+<Note>
+  Because Helixia depends on Arcane assigning the level role, the two bots must both be online and functioning for rewards to be processed correctly. If Arcane is experiencing issues, level-up rewards may be delayed.
+</Note>
 
-The format looks like:
+---
 
-```
-Level 5  — 100,000 Pokécoins
-Level 10 — 250,000 Pokécoins
-Level 15 — 500,000 Pokécoins
-...
-```
+## Level-Up Reward Table
 
-The exact levels and amounts depend on the server's current configuration.
+Below are all the level milestones and their corresponding one-time Pokécoin rewards:
+
+| Level | Reward |
+|---|---|
+| Level 5 | 50,000 PC |
+| Level 10 | 100,000 PC |
+| Level 15 | 200,000 PC |
+| Level 20 | 500,000 PC |
+| Level 30 | 750,000 PC |
+| Level 40 | 1,000,000 PC |
+| Level 50 | 2,000,000 PC |
+| Level 65 | 3,000,000 PC |
+| Level 80 | 4,000,000 PC |
+| Level 100 | 5,000,000 PC |
+
+<Tip>
+  The rewards scale dramatically at higher levels. Pushing from Level 50 to Level 100 nets you an additional **14,000,000 PC** in milestones alone — easily some of the biggest one-time payouts in the server.
+</Tip>
+
+You can also verify the current reward configuration at any time by running `.leveluplist` (or `.lvllist`) in the bot commands channel.
+
+---
 
 ## Key Details
 
 <AccordionGroup>
   <Accordion title="Rewards are one-time only">
-    Each level reward can only be claimed once. If you already received the reward for Level 10, you won't get it again even if you somehow lose and regain the role.
+    Each level reward can only be earned once per milestone. If you've already received the reward for a particular level, it will not be awarded again — even if you somehow lose and regain the role.
   </Accordion>
-  <Accordion title="Higher levels = bigger rewards">
-    The rewards scale up significantly at higher levels. Early levels might give 50,000–100,000 PC, while higher levels can award 500,000 PC or more.
+  <Accordion title="Your level is shown on your profile">
+    Run `.info` to view your profile. The **Current Level** field displays the highest level role you currently hold in the server, as determined by Arcane.
   </Accordion>
-  <Accordion title="Your current level shows on your profile">
-    When you run `.info`, the **Current Level** field shows your highest level role. This is determined by which level roles you currently have.
+  <Accordion title="Only milestone levels give rewards">
+    Not every level has a reward. Rewards are tied to specific milestone levels (5, 10, 15, 20, 30, 40, 50, 65, 80, 100). Levels in between — like Level 7 or Level 25 — do not have associated Pokécoin payouts.
+  </Accordion>
+  <Accordion title="Higher levels take longer to reach">
+    Experience requirements increase as you level up. Lower levels like 5 and 10 are relatively quick to reach through normal activity, while higher milestones like Level 80 and Level 100 require sustained long-term activity.
   </Accordion>
 </AccordionGroup>
 
-## Checking Your Level
+---
 
-Your current level is displayed on your `.info` profile. The level shown corresponds to the highest level role you hold in the server.
+## Troubleshooting — Missing Level-Up Reward
 
-<Tip>
-  Keep chatting in the tracked channels to gain experience and level up. The level-up rewards are free Pokécoins just for being active in the community.
-</Tip>
+If you leveled up but did **not** receive your Pokécoin reward, here's what's likely happened and what to do about it.
+
+### Why This Can Happen
+
+Because the Helixia bot relies on Arcane assigning your level role to trigger the reward, if Arcane **did not assign the role** (or assigned it with a delay), Helixia never gets the signal to pay out the reward. This is an Arcane-side issue and is outside of Helixia's control.
+
+Common scenarios where this occurs:
+
+- **Arcane was temporarily offline or restarting** when you leveled up, so the role was never assigned
+- **The role assignment was delayed** and Helixia missed the event window
+- **A sync issue between the two bots** caused the role update to go undetected
+
+<Warning>
+  If you leveled up and did not receive your reward, **do not ignore it**. Open a support ticket so staff can manually verify your level and issue the missing reward.
+</Warning>
+
+### What to Do
+
+<Steps>
+  <Step title="Confirm the level-up happened">
+    Check whether you actually have the new level role in the server. You can verify this by running `.info` and checking your **Current Level**, or by looking at your roles in the server member list.
+  </Step>
+  <Step title="Check your balance">
+    Run `.info` to check your current Pokécoin balance. If the reward was credited, you'll see the change reflected there.
+  </Step>
+  <Step title="Open a support ticket">
+    If you have the level role but your balance was not updated, open a support ticket in the server. Staff will be able to verify your level, check the reward logs, and manually issue the missing Pokécoins if needed.
+  </Step>
+</Steps>
+
+<Note>
+  Staff **can** assist with missing level-up rewards — this is a known edge case. Just open a ticket with your username and the level you reached, and the team will sort it out.
+</Note>
