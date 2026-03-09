@@ -1,4 +1,167 @@
 ---
-title: 'Completing A Trade'
+title: "Completing a Trade"
+description: "What happens after you win an auction — the private trade thread, exact Pokétwo commands, and what to do if something goes wrong."
+icon: "handshake"
 ---
 
+Winning a bid is only half the process. After the auction closes, the real-money exchange happens through Pokétwo's trade system inside a **private thread** that the bot creates automatically. This guide walks through exactly what to do as both a buyer and a seller from the moment bidding ends to the moment the trade is verified and closed.
+
+---
+
+## What Happens Immediately After a Slot Closes
+
+The moment the bidding timer expires and a winner is determined:
+
+1. The bot posts a **"Sold!"** embed in the bid channel announcing the buyer, seller, and final price
+2. A **private trade thread** is automatically created in the bid channel — only the buyer, seller, Pokétwo, and staff can see it
+3. Both the buyer and seller receive a **DM** from the bot confirming the result and directing them to the thread
+4. The auction channel moves on to the next slot immediately — the trade happens in the thread separately and in parallel
+
+<Note>
+  The private thread is created automatically within seconds of the auction closing. You don't need to do anything to trigger it. Just look for the thread notification in the bid channel or follow the link in the DM you receive.
+</Note>
+
+---
+
+## Inside the Trade Thread
+
+When you enter the thread, the bot will have already posted a checklist message explaining exactly what needs to happen:
+
+- **Buyer** adds exactly the winning bid amount in Pokécoins
+- **Seller** includes the correct Pokémon
+- Both sides confirm only when everything is correct
+
+The bot monitors the thread automatically. It watches for Pokétwo trade embeds and verifies the contents in real time.
+
+---
+
+## Step-by-Step: Completing the Trade
+
+<Steps>
+  <Step title="Seller initiates the Pokétwo trade">
+    Either the buyer or seller can start the trade, but it's simplest for the seller to initiate. In the thread, use:
+    ```
+    @poketwo#8236 trade @buyer
+    ```
+    Replace `@buyer` with a mention of the buyer's Discord account.
+  </Step>
+  <Step title="Buyer accepts the trade request">
+    The buyer accepts the trade request that Pokétwo sends.
+  </Step>
+  <Step title="Seller adds their Pokémon">
+    The seller adds the exact Pokémon that was auctioned using its display number:
+    ```
+    @poketwo#8236 t a <pokémon display number>
+    ```
+    The display number is shown in the Pokétwo info footer (e.g., "Displaying Pokémon 5785"). The bot will have shown this number during the auction itself.
+  </Step>
+  <Step title="Buyer adds the Pokécoins">
+    The buyer adds the exact amount that was bid:
+    ```
+    @poketwo#8236 t a pc <amount>
+    ```
+    For example, if the winning bid was 250,000 pc:
+    ```
+    @poketwo#8236 t a pc 250000
+    ```
+  </Step>
+  <Step title="Both sides verify and confirm">
+    Before confirming, **both parties should check** that the trade draft shows the correct Pokémon and the correct Pokécoin amount. Once everything looks right, both confirm the trade.
+  </Step>
+  <Step title="Trade is verified automatically">
+    The bot is watching the thread. As soon as it detects the completed Pokétwo trade embed with the correct Pokémon and Pokécoin amount, it verifies the trade, logs the sale, and closes the thread automatically.
+  </Step>
+</Steps>
+
+---
+
+## How the Bot Verifies the Trade
+
+The Helixia auction bot monitors every message in the trade thread from Pokétwo. It checks:
+
+- That the trade includes the **correct Pokémon** (matching the one that was auctioned)
+- That the buyer added **exactly the right amount of Pokécoins** (matching the winning bid to the exact pc)
+
+If both conditions are met when the trade is confirmed, the bot:
+- Posts a **"Trade Verified!"** message in the thread
+- Logs the sale in the server's auction logs channel
+- Updates both the buyer's and seller's auction stats
+- Deletes the thread after a short delay
+
+<Warning>
+  The Pokécoin amount must match **exactly**. If the buyer adds 249,000 pc instead of 250,000 pc, the bot will flag it as incorrect and will not verify the trade. Always double-check the amount shown in the trade draft before confirming.
+</Warning>
+
+---
+
+## If the Trade Has Incorrect Items
+
+If you confirm the trade but the items don't match what was auctioned — for example, the wrong Pokémon was included or the Pokécoin amount is off — the bot will detect the mismatch and **escalate a dispute automatically**.
+
+When a dispute is raised:
+- The bot posts a dispute embed in the thread
+- The issue is escalated to the server's dispute channel where staff are notified
+- Staff will review the trade details and intervene
+
+<Warning>
+  Do **not** confirm a trade if the contents are wrong. If the seller added the wrong Pokémon or the buyer added the wrong amount, cancel the trade and correct it before confirming. Confirming an incorrect trade and then claiming it was a mistake is much harder to resolve after the fact.
+</Warning>
+
+---
+
+## If Something Goes Wrong During the Trade
+
+Trades don't always go smoothly. Here's how to handle the most common situations:
+
+<AccordionGroup>
+  <Accordion title="The seller is not responding">
+    Wait a few minutes — the seller may be dealing with something. If the seller remains unresponsive for an extended period, mention a staff member in the thread or open a support ticket in the main Helixia server. Staff monitor open trade threads and can intervene.
+  </Accordion>
+  <Accordion title="The buyer is not responding">
+    Same process — wait briefly, then escalate to staff via a support ticket if the buyer goes silent. Winning a bid and then refusing to complete the trade is a serious violation.
+  </Accordion>
+  <Accordion title="The wrong Pokémon was added">
+    Do not confirm. Tell the seller in the thread that the wrong Pokémon was added. They should remove the incorrect one and add the right one before you both confirm.
+  </Accordion>
+  <Accordion title="The wrong amount of Pokécoins was added">
+    Do not confirm. Tell the buyer the exact amount required. The winning bid amount is clearly stated in the thread's initial checklist message posted by the bot.
+  </Accordion>
+  <Accordion title="Pokétwo is not responding or is offline">
+    If Pokétwo is down or unresponsive, wait for it to come back online. Do not close the thread — staff are aware of open threads. Once Pokétwo is available again, complete the trade.
+  </Accordion>
+  <Accordion title="I accidentally confirmed an incorrect trade">
+    Open a support ticket in the main Helixia server immediately. Provide the thread details, what was in the trade, and what should have been in it. Staff will review the logs and determine the appropriate resolution.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Refusing to Trade — Rules and Consequences
+
+Winning an auction creates an obligation. If you win a bid, **you are expected to complete the trade**. Similarly, if you sold a Pokémon, **you are expected to deliver it**.
+
+The following are considered violations:
+
+- **Buyer refuses to trade** after winning the bid
+- **Seller refuses to hand over the Pokémon** after the auction closes
+- **Either party goes missing** without explanation after winning or selling
+- **Intentional incorrect trade** (adding the wrong Pokémon or a different amount on purpose)
+
+These violations can result in an **auction blacklist**, which prevents participation in all future Helixia auctions. Repeat or egregious violations may result in broader server consequences.
+
+<Note>
+  If you genuinely cannot complete a trade due to an emergency or technical issue, contact staff as soon as possible. Proactively communicating a problem is always treated more leniently than going silent.
+</Note>
+
+---
+
+## After the Trade Thread Closes
+
+Once the trade is verified:
+
+- The thread is deleted automatically
+- The sale is recorded in the auction logs
+- Both the buyer's and seller's `/profile` stats are updated (sold count, bought count, total earned, total spent)
+- If it was the final session of the day, the temporary server is deleted once all threads are resolved
+
+Your Pokécoins are now in your Pokétwo wallet. The auction is complete.

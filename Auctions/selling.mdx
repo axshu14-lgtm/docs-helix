@@ -1,4 +1,201 @@
 ---
-title: 'Selling'
+title: "How to Sell in Auctions"
+description: "A complete guide to registering your Pokémon, setting a starting bid, and navigating your auction slot."
+icon: "tag"
 ---
 
+Selling your Pokémon in a Helixia auction is one of the best ways to earn a large amount of Pokécoins quickly. This guide covers everything you need to do — from preparing your Pokémon before the session to posting your live info when it's your turn to go.
+
+---
+
+## Requirements
+
+Before you can register for an auction, make sure you meet all of the following:
+
+- **Level 5 or above** in the main Helixia server. The bot checks this automatically. If you don't have the Level 5 role, your submission will be rejected.
+- **Member of the main Helixia server.** Even though auctions happen in the temporary server, your eligibility is verified against your membership in the main server.
+- **Not blacklisted.** If you have an active auction blacklist, you will not be able to join the temporary server at all.
+
+---
+
+## Step 1 — Set Your Pokémon's Nickname to Your Starting Bid
+
+Before the auction session begins, you need to **set a nickname on the Pokémon you want to sell** in Pokétwo. This nickname is how the bot reads your Starting Bid (SB).
+
+Your SB must be a valid amount in the format `10k`, `50k`, `100k`, etc.
+
+**Valid SB range:** 1,000 pc minimum — 100,000 pc maximum
+
+<Note>
+  The starting bid is embedded in the Pokémon's nickname. If your Pokémon has no valid SB in its nickname, or the amount is outside the valid range, your submission will be silently ignored and you will not receive a slot.
+</Note>
+
+**How to set the nickname in Pokétwo:**
+```
+@poketwo#8236 nickname <pokémon number> <your SB>
+```
+For example, to set a 10,000 pc starting bid on Pokémon number 5785:
+```
+@poketwo#8236 nickname 5785 10k
+```
+
+The nickname just needs to **contain** the SB value — you don't need to put only the number. Something like `10k goated` works fine. The bot reads the last valid numeric value it finds in the nickname.
+
+<Tip>
+  Set your Pokémon's nickname before the session starts so you're ready the moment registration opens. Scrambling to set a nickname after the channel unlocks means you could miss your slot.
+</Tip>
+
+---
+
+## Step 2 — Watch for the Announcement in the Main Server
+
+When a session is about to begin, an announcement will be posted in the main Helixia server's auction announcement channel. This announcement:
+
+- Pings the **Auction role** so you get notified
+- Includes a **"Join Auction Server"** button that links to the temporary server
+- States that **registration opens in approximately 2 minutes**
+
+Click the button to join the temporary server. Once you're inside, navigate to the **📝〢auction-register** channel and wait for it to open.
+
+---
+
+## Step 3 — Submit Your Pokémon During Registration
+
+When registration opens, the auction-register channel will unlock and a message will appear explaining how long the window is and how many slots are available.
+
+**To submit your Pokémon:**
+
+<Steps>
+  <Step title="Run the Pokétwo info command on your Pokémon">
+    In the **📝〢auction-register** channel, use the Pokétwo info command for the specific Pokémon you want to sell:
+    ```
+    @poketwo#8236 i <pokémon number>
+    ```
+    For example: `@poketwo#8236 i 5785`
+  </Step>
+  <Step title="Reply to your own info embed">
+    Pokétwo will respond with the info embed for your Pokémon. You need to **reply directly to that Pokétwo response** (not to your original command). This reply is your submission — the bot reads it as a registration.
+  </Step>
+  <Step title="Wait for confirmation">
+    The bot will reply to your submission message confirming your slot has been secured, along with your randomly assigned slot number once randomization completes.
+  </Step>
+</Steps>
+
+<Warning>
+  Only replies to the **Pokétwo info embed message** count. Do not reply to your own command message. Do not post the info on its own without replying. The submission only registers when the bot detects a reply to a valid Pokétwo info embed.
+</Warning>
+
+### Slot-Based vs. Time-Based Registration
+
+There are two registration modes that may be used in any given session:
+
+| Mode | How it works |
+|---|---|
+| **Slot-Based** | A fixed number of slots (e.g., 10) are available. First sellers to submit valid registrations fill them. Once all slots are taken, registration closes early. |
+| **Time-Based** | Registration is open for a set window of time (e.g., 60 seconds). Everyone who submits a valid registration within that window gets a slot, regardless of order. |
+
+The registration message posted at the start of the window will tell you which mode is active for that session.
+
+**One slot per seller.** You can only register one Pokémon per session. If you try to submit a second one, it will be ignored.
+
+---
+
+## Step 4 — Slot Randomization
+
+Once registration closes (either because all slots filled or the time window expired), the bot **randomly shuffles the order** of all accepted submissions using a fair algorithm. This means:
+
+- There is **no advantage** to submitting the moment registration opens
+- There is **no disadvantage** to submitting near the end
+- Your slot number (1st, 2nd, 3rd, etc.) is assigned completely at random after all registrations are in
+
+You will receive a **DM** from the bot confirming:
+- Which Pokémon was accepted
+- Your randomly assigned slot number
+- What to expect next
+
+<Note>
+  Keep your DMs open so you receive notifications. If your DMs are closed, you won't receive the slot confirmation DM or the turn notification DM — although your slot still exists and will still be called.
+</Note>
+
+---
+
+## Step 5 — Be Ready When Your Slot Is Called
+
+When the auction reaches your slot in the 💰〢auction-bid channel, the bot will:
+
+1. **Tag you** in the bid channel, telling you it's your turn
+2. **Send you a DM** letting you know your turn has arrived with a link to the message
+
+You have **60 seconds** to post the live Pokétwo info command for your Pokémon in the bid channel. This is the live, up-to-date info embed that bidders will use to evaluate your Pokémon.
+
+**The command to post:**
+```
+@poketwo#8236 i <pokémon number>
+```
+
+If you already know your Pokémon's display number, use that directly. The bot will show it to you in the slot confirmation embed — it looks like "Displaying Pokémon 5785" in the Pokétwo footer.
+
+<Warning>
+  If you do not post your live info within 60 seconds of being called, **your slot will be skipped**. The auction will move on to the next seller. Be ready with the command before your turn approaches.
+</Warning>
+
+---
+
+## Step 6 — The Community Vote
+
+Before bidding opens on your slot, a **15-second community vote** takes place where members decide if your Pokémon is worth auctioning. If **60% or more** of voters vote No, your slot is skipped.
+
+If your slot is skipped by vote:
+- You will receive a **detailed DM** showing the full vote breakdown, including how many people voted yes and no
+- You can open a **support ticket** in the main Helixia server if you believe the skip was unwarranted
+
+See the [Community Voting guide](/auctions/community-vote) for full details on how this system works.
+
+---
+
+## Step 7 — Bidding on Your Pokémon
+
+If the vote passes, **bidding opens** and the channel unlocks for all members to place bids. You do not need to do anything during this phase — just watch as the bids come in.
+
+- Bidding lasts **60 seconds**, but the timer **resets with every new valid bid**, so popular Pokémon can run much longer
+- You **cannot bid on your own Pokémon**
+- When the timer expires, the highest bidder wins
+
+Once bidding ends, a **private trade thread** is created between you and the winning bidder. See the [Completing a Trade guide](/auctions/completing-a-trade) for what to do next.
+
+---
+
+## What Makes a Good Auction Pokémon?
+
+Because of the community voting system, low-quality Pokémon risk getting voted out before bidding even starts. To maximize your chances of a successful sale:
+
+<AccordionGroup>
+  <Accordion title="Bring Pokémon with high IVs">
+    High IV percentages are the most commonly valued metric in Helixia auctions. Pokémon with 80%+ IVs tend to generate the most competitive bidding. Bringing Pokémon with 30–40% IVs is likely to result in a community vote skip.
+  </Accordion>
+  <Accordion title="Rare or popular species perform better">
+    Legendaries, pseudo-legendaries, starter Pokémon, and fan-favourite species attract more bidders. A Pokémon with decent IVs but a highly desirable species can still sell very well.
+  </Accordion>
+  <Accordion title="Set a fair starting bid">
+    An SB that's too high relative to the Pokémon's actual value will result in zero bids and an unsold slot. Research what similar Pokémon have sold for using `/auclb` biggest purchases and set your SB accordingly.
+  </Accordion>
+  <Accordion title="Don't waste slots on junk">
+    Members who repeatedly register low-quality Pokémon that get voted out by the community may face consequences. The voting system exists specifically to protect auction quality, and vote logs are reviewed by staff.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## After the Auction — Getting Paid
+
+Once your Pokémon sells and the trade thread is created:
+
+1. Start a Pokétwo trade with the buyer in the private thread
+2. Add your Pokémon to the trade
+3. The buyer adds the exact Pokécoin amount that was bid
+4. Confirm the trade once both sides are correct
+5. The bot automatically verifies the trade and logs the sale
+
+Your Pokécoins are in your Pokétwo account as soon as the trade completes. The Helixia Pokécoins (PC) in your server balance are separate — auction earnings go directly to your Pokétwo wallet, not your Helixia balance.
+
+See the [Completing a Trade guide](/auctions/completing-a-trade) for the full trade process with exact commands.

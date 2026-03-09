@@ -1,4 +1,127 @@
 ---
-title: 'Stats And Leaderboards'
+title: "Stats & Leaderboards"
+description: "Track your auction history, view server-wide statistics, and see how you rank against other members."
+icon: "chart-bar"
 ---
 
+The auction system keeps detailed records of every sale, purchase, and bid that happens in Helixia. You can view your personal auction history, check server-wide all-time stats, and compete on six different leaderboards — all through public commands available to every member.
+
+---
+
+## Your Auction Profile
+
+Run `/profile` (or `,p`) to view your personal auction stats at any time.
+
+Your profile shows:
+
+| Stat | What It Tracks |
+|---|---|
+| **Bids Placed** | Total number of valid bids you have placed across all sessions |
+| **Auctions Won** | Total number of Pokémon you have successfully purchased |
+| **Total Spent** | Cumulative Pokécoins you have paid across all winning bids |
+| **Pokémon Sold** | Total number of your Pokémon that have been successfully auctioned and traded |
+| **Total Earned** | Cumulative Pokécoins you have earned from all completed sales |
+| **Bids on Your Listings** | Total number of bids other members have placed on Pokémon you listed |
+
+<Tip>
+  You can view another member's auction profile by mentioning them or providing their user ID: `/profile @user` or `,p @user`. This is useful for checking whether a seller has a strong track record before a session.
+</Tip>
+
+---
+
+## Server-Wide Auction Statistics
+
+Run `/aucstats` to see all-time aggregate statistics for the entire Helixia auction system.
+
+The stats embed shows:
+
+| Stat | What It Shows |
+|---|---|
+| **Unique Sellers** | Total number of distinct members who have ever sold a Pokémon |
+| **Total Auctions** | Combined count of all sold and unsold slots across all sessions |
+| **Pokémon Sold** | Number of slots that ended with a successful sale |
+| **Pokémon Unsold** | Number of slots where no valid bids were received |
+| **Total Pokécoins Earned** | The combined value of every completed sale, ever |
+| **Volume (Millions)** | Total PC volume expressed in millions for easy reading |
+| **Highest Bid** | The single largest winning bid in Helixia auction history |
+| **Total Bids Placed** | Combined number of all bids ever placed across every session |
+| **Highest Bid Details** | The Pokémon name and buyer behind the all-time highest sale |
+
+These numbers update live after every auction event. On a busy day with ~150 Pokémon sold, you can watch the volume climb in real time.
+
+---
+
+## Auction Leaderboards
+
+Run `/auclb` to open the interactive auction leaderboard. There are **six leaderboard categories** to explore, selectable from a dropdown menu:
+
+| Category | What It Ranks |
+|---|---|
+| **Most Pokémon Sold** | Sellers with the highest number of completed sales (ties broken by total earned) |
+| **Most Pokémon Bought** | Buyers with the highest number of successful purchases |
+| **Highest Total Spent** | Members who have spent the most Pokécoins across all purchases |
+| **Highest Total Earned** | Members who have earned the most Pokécoins from selling |
+| **Most Bids Placed** | Members with the highest total bidding activity (bids placed, not wins) |
+| **Biggest Purchases** | The largest individual sale amounts ever recorded, including the Pokémon name, buyer, and seller |
+
+### Navigating the Leaderboard
+
+- Use the **dropdown menu** to switch between leaderboard categories
+- Use the **Prev** and **Next** buttons to page through results (10 entries per page, up to 25 shown)
+- Your **personal rank** in the currently selected category is shown in the footer of the embed, so you always know where you stand even if you're not in the top 10
+- The leaderboard is **live** — it updates automatically after each auction event, no need to refresh manually
+
+<Note>
+  The leaderboard is interactive for **10 minutes** after you open it. After that, the buttons and dropdown become inactive. Simply run `/auclb` again to open a fresh session.
+</Note>
+
+---
+
+## Auction Timings
+
+Run `/auctimings` to see the scheduled start times for all three daily auction sessions, displayed in **your local timezone**.
+
+The output shows each slot with a dynamic Discord timestamp:
+
+| Slot | Scheduled Time (IST) |
+|---|---|
+| Slot 1 | 6:00 PM |
+| Slot 2 | 9:00 PM |
+| Slot 3 — Final | 11:30 PM |
+
+Because Discord timestamps automatically convert to your local time, you don't need to manually convert from IST. The embed will also show a relative countdown (e.g., "in 2 hours") so you know exactly how long until the next session starts.
+
+<Tip>
+  Run `/auctimings` when you're not sure whether an auction is happening soon. It's the quickest way to check the schedule without asking in chat.
+</Tip>
+
+---
+
+## How Stats Feed Into Achievements
+
+Your auction activity doesn't only appear in your profile — it also counts toward two **permanent achievement categories** that pay out large one-time Pokécoin rewards:
+
+| Achievement Category | What It Tracks | Max Reward |
+|---|---|---|
+| **Pokémon Sold** | Total Pokémon you've sold through auctions | 2,000,000 PC |
+| **Auctions Won** | Total Pokémon you've bought through auctions | 2,000,000 PC |
+
+Both categories have four milestone tiers (Bronze, Silver, Gold, Diamond) at 10, 25, 50, and 75 completions each.
+
+<Card title="View All Achievements" icon="trophy" href="/progression/achievements">
+  See the full achievement milestone table including all auction tiers and rewards.
+</Card>
+
+---
+
+## Where Stats Are Tracked
+
+All auction stats are tracked against your account in the **main Helixia server**, regardless of whether the activity happened in the temporary auction server. You never need to worry about which server you're in — everything syncs to your main profile automatically.
+
+Stats are updated in real time:
+
+- **Bids Placed** — updated the moment a valid bid is accepted
+- **Auctions Won / Total Spent** — updated when the trade thread is completed and verified
+- **Pokémon Sold / Total Earned** — updated when the trade thread is completed and verified
+
+This means stats only reflect **fully completed, verified trades**. Winning a bid but failing to complete the trade does not count toward your Auctions Won or Total Spent.
