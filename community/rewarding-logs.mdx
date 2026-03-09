@@ -1,0 +1,226 @@
+---
+title: "Reward Logs"
+description: "A full breakdown of every reward log channel in Helixia and what each one records."
+icon: "scroll"
+---
+
+Helixia operates with full transparency. Every reward, payment, transfer, and automated action the bot takes is recorded in a dedicated log channel. These channels are visible to members so you can always verify your own rewards and see what's happening in the server economy in real time.
+
+This page explains exactly what each log channel records and what kind of entries you'll see in them.
+
+---
+
+## Vanity Logs
+
+### vanity-role-logs
+
+Logged every time the bot detects a member **adding or removing the vanity link** from their Discord status. This happens continuously as the bot monitors presence updates.
+
+Each entry shows:
+- Whether the vanity was **added** or **removed**
+- The member it applies to
+- If removed: how many hours were added in that session and their updated total vanity hours
+
+This channel is your proof that the bot correctly detected your vanity status changes. If your vanity time isn't counting and you're not sure why, check here to see whether the bot detected your status at all.
+
+---
+
+### vanity-rewards-logs
+
+Logged every time a member **receives a reward for their vanity time** — either a mystery box or a Pokécoin payout depending on the server's current configuration.
+
+Each entry shows:
+- The member who was rewarded
+- The reward amount (boxes or Pokécoins)
+- Their total accumulated vanity time
+- How much time has been counted as rewarded so far
+
+<Tip>
+  If you believe you should have received a vanity reward but didn't see it, check this channel first. If there's no entry for you around the time you expected, open a bug report with your vanity status details.
+</Tip>
+
+---
+
+## Server Tag Logs
+
+### tag-logs
+
+Logged every time the bot's periodic scan detects a member **adding or removing the Helixia server tag** from their Discord profile.
+
+Each entry shows:
+- Whether the tag was **detected as added or removed**
+- The member it applies to
+- If removed: how much time was added during that session and their updated total tag time
+
+Because the bot scans every 2–5 hours rather than in real time, entries here may appear with a slight delay from when you actually made the change.
+
+---
+
+### tag-rewards
+
+Logged every time a member **receives a mystery box reward for their server tag time** (every 72 hours of accumulated tag time).
+
+Each entry shows:
+- The member who received the box
+- Their total accumulated tag time
+- How much time has been marked as rewarded
+
+---
+
+## Giveaway Logs
+
+### gw-logs
+
+Logged every time the bot **automatically distributes giveaway prizes** to winners. When a giveaway ends and winners are determined, the bot credits each winner's balance and logs the entire distribution here.
+
+Each entry shows:
+- The winner(s) who were credited
+- The prize type (boxes or Pokécoins)
+- The amount each winner received
+
+This is the authoritative record that a giveaway reward was sent. If you won a giveaway and don't see your reward in your balance, check here to confirm whether it was distributed.
+
+---
+
+## Claim Logs
+
+### claimlogs
+
+Logged every time a member **successfully completes a Pokécoin claim** through the claim panel — meaning their market listing was purchased by the bot and their Helixia balance was deducted.
+
+Each entry shows:
+- The member who claimed
+- The amount claimed
+- The market ID that was purchased
+- The member's remaining balance after the claim
+
+---
+
+## Booster Logs
+
+### booster-logs
+
+Logged when a **server booster is removed from the booster reward system** — typically because they have stopped boosting the server. When the bot's weekly payout check detects that a member is no longer boosting, they are removed from active tracking and an entry is posted here.
+
+Each entry shows:
+- The member who was removed
+- How many boosts they had
+- When their last payment was
+
+---
+
+### booster-payments
+
+Logged every time a **weekly booster payout is sent** to an active server booster. The bot automatically pays boosters on a weekly cycle.
+
+Each entry shows:
+- The member who was paid
+- The amount they received (in Pokécoins)
+- How many boosts they hold
+- When their next payment is scheduled
+
+---
+
+## Box Logs
+
+### boxlogs
+
+Logged every time a member **earns a mystery box** from sending messages in world-chat (every 100 messages). This is the raw "box granted" log.
+
+Each entry shows:
+- The member who earned the box
+- Their total box count after receiving it
+- A jump link to the message that triggered the reward
+
+---
+
+### boxopenlogs
+
+Logged every time a member **opens one or more mystery boxes** using `.openbox`. Each opening session is recorded here.
+
+Each entry shows:
+- The member who opened boxes
+- How many boxes were opened
+- The total Pokécoins received from that opening
+- Their updated balance after opening
+
+---
+
+## Balance & Transfer Logs
+
+### bal-logs / balance-transfer-logs
+
+Logged every time a member **sends Pokécoins to another member** using the `.sendbal` command.
+
+Each entry shows:
+- The sender and recipient
+- The amount transferred
+- Both the sender's and recipient's updated balances after the transfer
+- The channel where the transfer was initiated
+
+---
+
+## Progression Logs
+
+### level-up-reward-logs
+
+Logged every time a member **receives a Pokécoin reward for reaching a level milestone**. This fires when the Arcane bot assigns a new level role and the Helixia bot detects it.
+
+Each entry shows:
+- The member who leveled up
+- The reward amount credited
+- Their new balance after the reward
+
+---
+
+### quest-logs
+
+Logged every time a member **completes a daily quest** or the **daily bonus quest** (completing all three). Both individual quest completions and the all-quests bonus are recorded here.
+
+Each entry shows:
+- The member who completed the quest
+- Which quest was completed
+- The Pokécoin reward amount
+- Their updated balance
+
+---
+
+### achievement-logs
+
+Logged every time a member **unlocks an achievement milestone** across any of the six achievement categories.
+
+Each entry shows:
+- The member who unlocked the achievement
+- The category (Messages, Vanity Time, Server Tag Time, etc.)
+- The milestone tier (Bronze, Silver, Gold, Diamond, Champion)
+- The reward amount credited
+- Their updated balance
+
+---
+
+## Deposit Logs
+
+### deposit-logs
+
+Logged for every **deposit transaction** — both when a deposit is initiated and when it is completed or expires.
+
+Each entry shows:
+- The member who initiated the deposit
+- The amount
+- The market ID generated for that deposit
+- The Pokémon used for the listing
+- Whether the deposit completed, expired, or failed
+
+---
+
+## Why These Channels Exist
+
+These log channels serve three purposes:
+
+1. **Transparency** — Every automated reward the bot gives is publicly verifiable. You never have to take the bot's word for it.
+2. **Self-service troubleshooting** — Before opening a bug report or support ticket, you can check the relevant log channel to see whether the bot processed your reward at all.
+3. **Accountability** — The logs create a complete audit trail that staff can reference when investigating disputes, missing rewards, or unusual activity.
+
+<Note>
+  These are read-only log channels. You cannot interact with them. If you notice a missing or incorrect entry that relates to you, use the bug report channel or open a support ticket as appropriate.
+</Note>

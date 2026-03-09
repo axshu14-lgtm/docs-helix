@@ -22,7 +22,9 @@
             "pages": [
               "economy/pokecoins",
               "economy/claiming",
+              "economy/depositing",
               "economy/mystery-boxes",
+              "economy/message-rewards",
               "economy/transferring"
             ]
           },
@@ -35,7 +37,7 @@
             ]
           },
           {
-            "group": "Auction",
+            "group": "Auctions",
             "pages": [
               "auctions/overview",
               "auctions/selling",
@@ -82,7 +84,9 @@
               "community/server-tag",
               "community/giveaways",
               "community/suggestions",
-              "community/server-boosting"
+              "community/server-boosting",
+              "community/reporting-bugs",
+              "community/reward-logs"
             ]
           }
         ]

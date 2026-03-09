@@ -1,0 +1,119 @@
+---
+title: "Depositing Pokécoins"
+description: "How to deposit Pokécoins from your Pokétwo account into your Helixia balance using the Deposit Panel."
+icon: "circle-arrow-down"
+---
+
+The Deposit Panel is how you convert Pokécoins from your **Pokétwo account** into your **Helixia balance**. This is the opposite of claiming — instead of cashing out, you're loading up your Helixia balance so you can gamble with higher amounts, keep your coins safe, or participate in server economy activities.
+
+The entire process is **fully automatic**. No staff involvement is needed at any point — the bot handles everything instantly.
+
+---
+
+## How It Works
+
+When you initiate a deposit, the bot automatically creates a Pokétwo market listing at your chosen price. You then purchase that listing from your own Pokétwo account. Once the purchase is detected, your Helixia balance is updated instantly.
+
+<Steps>
+  <Step title="Go to the deposit channel">
+    Find the deposit panel in its designated channel in the server. The panel has two buttons — **Deposit Pokécoins** and **How to Deposit**.
+  </Step>
+  <Step title="Click 'Deposit Pokécoins'">
+    A form will pop up asking for the amount you want to deposit.
+  </Step>
+  <Step title="Enter the amount">
+    Type the amount of Pokécoins you want to deposit. Supports shorthand formats like `100k`, `1.5m`, etc. The minimum is **50,000 PC** and the maximum is **100,000,000 PC (100M)**.
+  </Step>
+  <Step title="Receive your Market ID">
+    The bot will create a market listing and give you a **Market ID** — both in the panel reply (visible only to you) and via DM. This ID is the listing you need to purchase.
+  </Step>
+  <Step title="Purchase the listing in Pokétwo">
+    In any channel where Pokétwo is active, run:
+    ```
+    @Pokétwo m b <market_id>
+    ```
+    Replace `<market_id>` with the number you received. You have **3 minutes** to complete this step.
+  </Step>
+  <Step title="Balance updates automatically">
+    Once the purchase is detected, your Helixia balance is credited with the deposited amount instantly. You'll receive a confirmation via DM.
+  </Step>
+</Steps>
+
+---
+
+## Limits & Timing
+
+| Detail | Value |
+|---|---|
+| **Minimum Deposit** | 50,000 PC |
+| **Maximum Deposit** | 100,000,000 PC (100M) |
+| **Time to Complete** | 3 minutes |
+
+<Warning>
+  If you do not purchase the market listing within **3 minutes**, the deposit expires. The listing will still exist on the market but your Helixia balance will not be credited. If you purchased it after the expiry notice appeared, open a support ticket so staff can verify and manually credit you.
+</Warning>
+
+---
+
+## Queue System
+
+Multiple members can initiate deposits at the same time. The bot handles them one at a time using a **queue system**. If someone else is depositing when you submit yours, you'll see a queue position message — just wait and your deposit will be processed automatically in order.
+
+<Note>
+  If it seems like your deposit is taking a moment to start, this is normal. You're simply in the queue. Do not click the button again — that will create a second request.
+</Note>
+
+---
+
+## Important Rules
+
+<AccordionGroup>
+  <Accordion title="Never share your Market ID with anyone">
+    The Market ID the bot gives you is a live Pokétwo listing. If anyone else purchases it before you do, your deposit goes to them and your Helixia balance will not be credited. Keep it private and purchase it immediately.
+  </Accordion>
+  <Accordion title="Only purchase from your own Pokétwo account">
+    The deposit system verifies the purchase automatically. Always buy the listing from your own account — the one linked to your Discord. Purchasing from a different account may result in the deposit not being detected.
+  </Accordion>
+  <Accordion title="Do not deposit on behalf of someone else">
+    Deposits are tied to the user who initiates them. Do not use someone else's Market ID, and do not ask others to deposit for you.
+  </Accordion>
+  <Accordion title="The panel may occasionally be unavailable">
+    If clicking the button shows a "Panel Stopped" message, the deposit panel has been temporarily paused — usually due to a Pokétwo outage or a technical issue. Wait a little while and try again. If it remains unavailable for an extended period, create a support ticket.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## If Something Goes Wrong
+
+<AccordionGroup>
+  <Accordion title="I purchased the listing but my balance didn't update">
+    Wait up to a minute — there can be a brief delay between the purchase and the balance update. If it has been several minutes and your balance still hasn't changed, open a support ticket with your username and the approximate amount and time of your deposit.
+  </Accordion>
+  <Accordion title="My deposit expired but I already bought the listing">
+    If you purchased the Market ID after the 3-minute window closed and received an expiry notice, open a support ticket immediately. Staff can check the logs and manually credit your balance if the purchase is verified.
+  </Accordion>
+  <Accordion title="I got an error when trying to deposit">
+    Errors during deposit processing are usually caused by a temporary Pokétwo outage or the bot being briefly unavailable. Wait a few minutes and try again. If the issue persists, create a support ticket.
+  </Accordion>
+  <Accordion title="The panel button does nothing or shows 'System Unavailable'">
+    This means the deposit system is temporarily offline — typically during a Pokétwo outage or bot maintenance. Check the server announcements channel for any notices, and try again later. If there is no announcement and it has been a while, create a support ticket to flag it.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Deposit vs. Claim — What's the Difference?
+
+These two systems are often confused since they both involve Pokétwo markets and Helixia balances. Here's a clear comparison:
+
+| | Deposit | Claim |
+|---|---|---|
+| **Direction** | Pokétwo PC → Helixia balance | Helixia balance → Pokétwo PC |
+| **Who lists on market** | The Helixia bot | You |
+| **Who purchases** | You | The Helixia bot |
+| **Result** | Your Helixia balance goes up | Your Pokétwo balance goes up |
+
+<Card title="Claiming Pokécoins" icon="hand-holding-dollar" href="/economy/claiming">
+  Want to do the opposite — convert your Helixia balance into Pokétwo currency? See the Claiming guide.
+</Card>

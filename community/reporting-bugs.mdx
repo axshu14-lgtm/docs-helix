@@ -1,0 +1,163 @@
+---
+title: "Reporting Bugs"
+description: "How to report bugs properly so they can be investigated and fixed as quickly as possible."
+icon: "bug"
+---
+
+Found something that isn't working the way it should? Bug reports are genuinely valuable — they help the team identify and fix problems faster. But a useful bug report looks very different from an unhelpful one. This page explains what to report, where to report it, and how to write a report that actually gets the issue fixed.
+
+---
+
+## Where to Report
+
+All bugs should be reported in the dedicated **bug report channel** in the Helixia server. Do not:
+
+- Ping staff members directly about bugs
+- Report bugs in general chat, world-chat, or any other channel
+- Open a support ticket for something that is clearly a bot bug
+
+The bug report channel is the only place where reports are tracked and acted on. Reports posted anywhere else are likely to be missed.
+
+---
+
+## What Counts as a Bug
+
+A bug is when something behaves differently from how it is supposed to work. Examples of valid bugs:
+
+- A command returns an error when used correctly
+- A reward was not credited when it should have been (box, Pokécoins, quest credit, etc.)
+- A button or panel is unresponsive when it should be working
+- Stats or balances are displaying incorrect values
+- A feature is behaving inconsistently or unexpectedly
+
+**Not bugs — do not report these:**
+
+- The claim or deposit panel being stopped (this is intentional — see the [Claiming](/economy/claiming) and [Depositing](/economy/depositing) guides for why)
+- A Pokétwo outage causing deposit or claim issues (Pokétwo is a separate bot outside of Helixia's control)
+- Not receiving a reward you expected but that has conditions you may not have met
+- Wanting a feature to work differently than it does (that is a suggestion, not a bug)
+
+---
+
+## How to Write a Good Bug Report
+
+A vague report like *"the bot is broken"* cannot be investigated. A good report gives whoever is fixing the issue everything they need to reproduce and understand the problem without having to ask you follow-up questions.
+
+Include all of the following in your report:
+
+### 1. What you were trying to do
+Describe what action you took. Which command did you run? Which button did you click? What were you attempting to do?
+
+**Bad:** "The bot didn't work."
+
+**Good:** "I clicked the Claim Pokécoins button in the claim channel and filled out the form."
+
+---
+
+### 2. What you expected to happen
+What *should* have happened if everything worked correctly?
+
+**Bad:** "It should have worked."
+
+**Good:** "I expected my claim to enter the queue and receive a DM confirmation."
+
+---
+
+### 3. What actually happened
+Describe exactly what went wrong. Copy any error messages word for word. If the bot sent an error embed, include the title and description.
+
+**Bad:** "It gave me an error."
+
+**Good:** "The bot replied with a red embed saying 'Invalid Amount' even though I entered 100k which is above the 50,000 minimum."
+
+---
+
+### 4. A screenshot or screen recording
+Whenever possible, attach a screenshot of the issue. This is especially important for:
+- Unexpected error messages
+- Missing rewards or incorrect balance values
+- Broken embeds or buttons
+- Anything visual that is hard to describe in words
+
+A screenshot removes all ambiguity and significantly speeds up the investigation.
+
+---
+
+### 5. When it happened
+Include the approximate date and time (and your timezone). This helps the team check logs around that specific moment.
+
+---
+
+### 6. Whether it is reproducible
+Can you make the bug happen again by repeating the same steps? If yes, say so and list the exact steps. If it happened once and you cannot reproduce it, say that too — intermittent bugs are still worth reporting.
+
+---
+
+## Bug Report Template
+
+Copy and fill in this template when posting your report:
+
+```
+**What I was doing:**
+[Describe the action you took — which command, button, or feature]
+
+**What I expected:**
+[What should have happened]
+
+**What actually happened:**
+[What went wrong — include exact error messages if any]
+
+**When it happened:**
+[Date and approximate time + your timezone]
+
+**Can you reproduce it?**
+[Yes / No / Sometimes — if yes, list the steps]
+
+**Screenshot:**
+[Attach a screenshot if possible]
+```
+
+---
+
+## After You Report
+
+Once your report is posted:
+
+- **Do not spam or bump your report.** Staff read the bug channel. Posting "any update?" repeatedly does not speed things up.
+- **Stay available for follow-up questions.** A staff member or developer may reply asking for more information. Keep an eye on the channel or your DMs.
+- **Do not report the same bug multiple times.** If you already reported it, one report is enough. Duplicate reports clutter the channel and make it harder to track issues.
+
+---
+
+## Bugs That Affect Your Balance or Rewards
+
+If the bug resulted in you losing Pokécoins, not receiving a reward you were owed, or your balance being incorrect, include all of the above **plus**:
+
+- Your exact balance before and after (if you know it)
+- The specific amount you believe is missing
+- The feature that was supposed to credit you (e.g., quest reward, claim, deposit, level-up reward)
+
+<Warning>
+  Do not assume staff will proactively notice balance issues. If something was not credited to you, you need to report it — it will not be automatically detected and corrected without a report.
+</Warning>
+
+---
+
+## Common Issues That Are Not Bugs
+
+Before posting, check whether your issue is already explained in the documentation:
+
+<AccordionGroup>
+  <Accordion title="The claim or deposit panel says it's stopped">
+    This is intentional and happens for two reasons: a bot outage, or the panel running out of funds. It resolves on its own. See the [Claiming guide](/economy/claiming) for full details.
+  </Accordion>
+  <Accordion title="My daily quest didn't count a message or catch">
+    Quests have specific requirements. Messages must meet the minimum length and spacing rules, and catches must happen in the right context. Check the [Daily Quests guide](/economy/daily-quests) before reporting.
+  </Accordion>
+  <Accordion title="My vanity or tag time isn't counting">
+    Both systems have eligibility requirements (account age, message activity, tag/vanity being active). Run `.vanitystatus` or `.ts` to see exactly which requirement is failing. Check the [Vanity](/community/vanity) and [Server Tag](/community/server-tag) guides.
+  </Accordion>
+  <Accordion title="I didn't get my level-up reward">
+    Level-up rewards depend on Arcane assigning you the level role first. If Arcane was offline or delayed when you leveled up, the role may not have been assigned. This is not a Helixia bug — open a support ticket instead of a bug report. See the [Leveling guide](/progression/leveling).
+  </Accordion>
+</AccordionGroup>

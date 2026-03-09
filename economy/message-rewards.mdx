@@ -1,0 +1,82 @@
+---
+title: "Message Rewards"
+description: "Earn mystery boxes by staying active in world-chat — one box for every 100 messages."
+icon: "message-lines"
+---
+
+Helixia rewards active chatters. Every **100 messages** you send in the 🌏〢world-chat channel earns you **1 mystery box**, which contains anywhere between **30,000 and 150,000 PC**. It's one of the most passive and consistent ways to stack up boxes just by being part of the community.
+
+---
+
+## How It Works
+
+The bot tracks every message you send in 🌏〢world-chat. Once your count hits a multiple of 100, a mystery box is automatically added to your inventory. You don't need to run any command or claim anything — the box just appears.
+
+| Activity | Reward |
+|---|---|
+| Every 100 messages in 🌏〢world-chat | 1 Mystery Box |
+| Each Mystery Box | 30,000 – 150,000 PC |
+
+<Note>
+  These are the same messages that count toward your **"Send 100 Messages"** daily quest. One activity, two rewards — quest credit and a box.
+</Note>
+
+---
+
+## What Counts as a Valid Message
+
+Not every message you send is counted. The bot applies the following rules automatically:
+
+<AccordionGroup>
+  <Accordion title="Must be sent in 🌏〢world-chat">
+    Messages sent in any other channel — including bot commands channels, gambling channels, or anywhere else — do not count toward your message total. Only 🌏〢world-chat is tracked.
+  </Accordion>
+  <Accordion title="Must be at least 3 characters long">
+    Messages shorter than 3 characters are ignored. Single-letter responses, emoji-only messages shorter than the threshold, and similar low-effort messages will not be counted.
+  </Accordion>
+  <Accordion title="Must not be sent within 2 seconds of your last message">
+    If you send a message less than 2 seconds after your previous one, it is not counted. This prevents rapid-fire spam from inflating your message count. Each counted message must have at least a 2-second gap from the one before it.
+  </Accordion>
+  <Accordion title="Must not be your 4th or more consecutive message in a row">
+    If you send 3 messages in a row without anyone else sending a message in between, any further consecutive messages from you will not be counted until someone else chats. This prevents one person from stacking their count by talking to themselves.
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  All four of these rules are enforced automatically by the bot. There is no way to appeal a message not being counted — if it didn't meet the criteria above, it simply doesn't count.
+</Warning>
+
+---
+
+## Checking Your Progress
+
+Run `.info` to see your current message count and how many unopened boxes you have waiting:
+
+| Field | What It Shows |
+|---|---|
+| **Messages** | Your total counted messages in tracked channels since you joined |
+| **Boxes** | The number of mystery boxes currently in your inventory |
+
+You can also run `.i` as a shorthand for the same command.
+
+---
+
+## Opening Your Boxes
+
+Once you've earned boxes, open them with `.openbox`:
+
+```
+.openbox 1      — open 1 box
+.openbox 5      — open 5 boxes at once
+.openbox all    — open everything at once
+```
+
+Each box gives a random amount between **30,000 and 150,000 PC**, rounded to the nearest 1,000. Run `.helpbox` for an in-bot breakdown of the box system.
+
+<Tip>
+  There is no benefit to opening boxes one at a time. Use `.openbox all` to open everything in one go — the rewards are random regardless of how many you open at once.
+</Tip>
+
+<Card title="Mystery Boxes" icon="box-open" href="/economy/mystery-boxes">
+  Full details on mystery boxes — how they work, all the ways to earn them, and how rewards are calculated.
+</Card>
