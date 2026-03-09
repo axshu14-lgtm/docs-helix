@@ -1,0 +1,210 @@
+---
+title: "Server Tag Rewards"
+description: "Earn mystery boxes by keeping the Helixia server tag on your Discord profile."
+icon: "tag"
+---
+
+The server tag system rewards you for repping Helixia on your Discord profile. By keeping the server's tag displayed on your account, the bot tracks your time and automatically rewards you with mystery boxes — completely passively, just like vanity rewards.
+
+<Note>
+  Helixia is proud to be the **first server in the history of Discord** to run a reward system like this. Server Tag Rewards are unique to Helixia.
+</Note>
+
+## What Is a Server Tag?
+
+A Discord Server Tag is a short label (up to 5 characters) that appears next to your username on your profile. It represents a server you're a member of. You can choose to display one tag at a time from any eligible server you belong to.
+
+Helixia's server tag is:
+
+> **BRUH**
+
+When you set this tag on your profile and stay active, the Helixia bot tracks your time and rewards you for it.
+
+---
+
+## How to Set Your Server Tag
+
+### Desktop & Browser
+
+<Steps>
+  <Step title="Open User Settings">
+    Click the **cogwheel icon** next to your Discord username (bottom-left of the app) to open User Settings.
+  </Step>
+  <Step title="Go to Profiles">
+    Click **Profiles** in the left sidebar, or select **Edit User Profile** from the cogwheel menu.
+  </Step>
+  <Step title="Find the Server Tag section">
+    Scroll down until you see **Server Tag**. Press **Select** to see all available tags from your servers.
+  </Step>
+  <Step title="Select Helixia's tag">
+    Find and select the **BRUH** tag from the list. Your settings will be saved automatically — no need to press a save button.
+  </Step>
+</Steps>
+
+<Tip>
+  To **remove** the tag on desktop or browser, press the **X** button next to the currently applied tag in the Server Tag section.
+</Tip>
+
+### Mobile
+
+<Steps>
+  <Step title="Tap your avatar">
+    Tap on your **avatar** in the bottom-right corner of the Discord app to open your profile.
+  </Step>
+  <Step title="Press Edit Profile">
+    Tap **Edit Profile** from the menu that appears.
+  </Step>
+  <Step title="Find Server Tags">
+    Scroll down until you see **Server Tags** and tap on it.
+  </Step>
+  <Step title="Select Helixia's tag">
+    Select the **BRUH** tag from the list. The setting is applied automatically.
+  </Step>
+</Steps>
+
+---
+
+## Requirements
+
+To earn tag rewards, you must meet **all three** of the following requirements at the same time:
+
+<Steps>
+  <Step title="Account age">
+    Your Discord account must be at least **6 months old**. This prevents brand-new or alt accounts from farming rewards.
+  </Step>
+  <Step title="Server tag active on your profile">
+    Your Discord profile must have the Helixia **BRUH** server tag set and visible. If it's missing, tracking pauses immediately.
+  </Step>
+  <Step title="Recent message activity">
+    You must have sent at least **30 messages** in the 🌏〢world-chat channel within the **last 7 days**. This ensures only active, engaged members earn rewards.
+  </Step>
+</Steps>
+
+<Warning>
+  If **any one** of these three requirements is not met, your tag time **stops accumulating** until the requirement is fulfilled again. The bot checks your profile every 2–5 hours, so your time will resume automatically once everything is in order.
+</Warning>
+
+---
+
+## Starting Your Tracking
+
+The bot does **not** begin tracking you automatically just because you have the tag on your profile. You must manually start tracking once.
+
+<Steps>
+  <Step title="Make sure you meet all three requirements">
+    Set the BRUH tag on your profile, ensure your account is 6+ months old, and verify you have at least 30 recent messages in world-chat.
+  </Step>
+  <Step title="Click the 'Start Tracking' button">
+    Head to the server tag channel and click the **Start Tracking** button on the panel. This registers you as an active user and the bot will begin monitoring your profile from that point on.
+  </Step>
+  <Step title="Wait for the bot to verify your tag">
+    The bot periodically checks your profile every **2–5 hours**. On its next check, it will confirm your tag is present and begin counting your time.
+  </Step>
+</Steps>
+
+<Note>
+  You only need to click **Start Tracking** once. After that, the bot handles everything automatically as long as you remain active.
+</Note>
+
+---
+
+## How Rewards Work
+
+Once tracking is active and all requirements are met, the bot counts your tag time in the background. For every **72 hours** of accumulated tag time, you automatically receive **1 mystery box** in your inventory.
+
+You don't need to run any commands or do anything manually — the box is added to your inventory automatically when you hit the threshold.
+
+---
+
+## Pausing and Resuming Tracking
+
+Life happens. Here's exactly what occurs if you remove the tag:
+
+### If you remove the tag
+
+Your tracking is **paused** immediately. The time you've already accumulated is saved — nothing is lost. The bot continues to check your profile periodically for up to 7 days to see if the tag comes back.
+
+### If you re-add the tag within 7 days
+
+Tracking **resumes automatically** — no need to click Start Tracking again. The bot detects that your tag is back on its next periodic check and picks up right where it left off.
+
+### If you don't re-add the tag within 7 days
+
+The bot marks you as **inactive** and stops checking your profile periodically (to save resources). This means:
+
+- You will need to click the **Start Tracking** button again to re-register as an active user
+- Only then will the bot resume periodic checks and resume counting your time
+- Your previously accumulated time is still saved — you won't lose progress, you just need to manually restart the tracking process
+
+<Warning>
+  If your tag has been missing for more than 7 days, do not assume tracking will resume on its own. You **must** click Start Tracking again to re-activate monitoring.
+</Warning>
+
+---
+
+## Checking Your Status
+
+Use `.ts` (short for tag status) to see a detailed breakdown of your current tag tracking, including:
+
+| Field | What It Shows |
+|---|---|
+| **Total Tag Time** | The cumulative time your server tag has been tracked (days, hours, minutes) |
+| **Currently Active** | Whether tracking is counting right now |
+| **Requirements** | Which requirements you meet and which you don't |
+| **Next Reward** | How much time until your next mystery box |
+
+Use `.lb ts` to view the **Tag Time Leaderboard** and see how you rank against other members.
+
+---
+
+## Notifications
+
+The bot uses two dedicated channels to keep you informed:
+
+- **Tag log channel** — Notifies you when the bot detects that your tag has been **added or removed** from your profile.
+- **Reward log channel** — Notifies you when you've hit the 72-hour threshold and a **mystery box has been awarded** to your inventory.
+
+Make sure your DMs are open if you want direct personal notifications in addition to these channel pings.
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I set the tag but tracking hasn't started">
+    The bot checks your profile every 2–5 hours, so there may be a short delay before tracking begins. Also make sure you clicked the **Start Tracking** button — simply having the tag set is not enough to begin tracking. Additionally, confirm that all three requirements (account age, tag active, 30 recent messages) are met.
+  </Accordion>
+  <Accordion title="My tag is set but time isn't counting">
+    Run `.ts` to see which requirement is failing. The most common issue is not having enough recent messages in world-chat — you need **30 messages within the last 7 days**. If you haven't been active in that channel recently, your time will be paused regardless of whether the tag is set.
+  </Accordion>
+  <Accordion title="I removed the tag and want to restart — do I need to click Start Tracking again?">
+    It depends on how long the tag was missing. If it was less than **7 days**, the bot will automatically detect the tag coming back on its next check and resume tracking — no button needed. If it has been **more than 7 days**, you will need to click Start Tracking again to re-register as an active user.
+  </Accordion>
+  <Accordion title="Will I lose my accumulated time if I remove the tag?">
+    No. Your accumulated tag time is **never deleted**. If you remove the tag, tracking simply pauses. When tracking resumes (either automatically within 7 days, or manually via Start Tracking), your time continues building from where it left off.
+  </Accordion>
+  <Accordion title="Can I have both vanity rewards and tag rewards running at the same time?">
+    Yes! Vanity rewards and server tag rewards are completely independent systems. You can earn boxes from both simultaneously as long as you meet the requirements for each.
+  </Accordion>
+  <Accordion title="Where do I report a bug with tag tracking?">
+    Report any issues or bugs in the designated bug-report channel in the server. Do not ping staff directly.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Server Tag Achievements
+
+In addition to the regular 72-hour box reward, your accumulated tag time also counts toward the **Server Tag Time achievement category**. These are permanent, one-time milestone rewards that offer significant Pokécoin payouts:
+
+| Milestone | Threshold | Reward |
+|---|---|---|
+| 🥉 Bronze | 1 week | 125,000 PC |
+| 🥈 Silver | 2 weeks | 250,000 PC |
+| 🥇 Gold | 1 month | 500,000 PC |
+| 💎 Diamond | 3 months | 1,000,000 PC |
+| 👑 Champion | 6 months | 2,500,000 PC |
+
+<Card title="View All Achievements" icon="trophy" href="/progression/achievements">
+  See every achievement category, milestone, and reward — including the full Server Tag Time tier list.
+</Card>
