@@ -28,13 +28,13 @@ The bid increment also starts at **1,000 pc** for bids under 1,000,000 pc, then 
 
 ## Step 1 — Watch for the Announcement in the Main Server
 
-When a session is about to begin, an announcement will be posted in the main Helixia server's auction announcement channel. This announcement:
+When a session is about to begin, an announcement will be posted in the main Helixia server's [auction announcement channel](https://discord.com/channels/1459854752580898868/1461730554738249811). This announcement:
 
 - Pings the **Auction role** so you get notified
 - Includes a **"Join Auction Server"** button that links to the temporary server
 - States that **registration opens in approximately 2 minutes**
 
-Click the button to join the temporary server. Once you're inside, navigate to the **📝〢auction-register** channel and wait for it to open.
+Click the button to join the temporary server. Once you're inside, navigate to the **auction-register** channel and wait for it to open.
 
 ---
 
@@ -46,10 +46,12 @@ When registration opens, the auction-register channel will unlock and a message 
 
 <Steps>
   <Step title="Run the Pokétwo info command on your Pokémon">
-    In the **📝〢auction-register** channel, use the Pokétwo info command for the specific Pokémon you want to sell:
-    ```
+    In the **auction-register** channel, use the Pokétwo info command for the specific Pokémon you want to sell:
+
+    ```text
     @poketwo#8236 i <pokémon number>
     ```
+
     For example: `@poketwo#8236 i 5785`
   </Step>
   <Step title="Reply to your own info embed">
@@ -68,9 +70,9 @@ When registration opens, the auction-register channel will unlock and a message 
 
 There are two registration modes that may be used in any given session:
 
-| Mode | How it works |
-|---|---|
-| **Slot-Based** | A fixed number of slots (e.g., 10) are available. First sellers to submit valid registrations fill them. Once all slots are taken, registration closes early. |
+| Mode           | How it works                                                                                                                                                     |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Slot-Based** | A fixed number of slots (e.g., 10) are available. First sellers to submit valid registrations fill them. Once all slots are taken, registration closes early.    |
 | **Time-Based** | Registration is open for a set window of time (e.g., 60 seconds). Everyone who submits a valid registration within that window gets a slot, regardless of order. |
 
 The registration message posted at the start of the window will tell you which mode is active for that session.
@@ -88,6 +90,7 @@ Once registration closes (either because all slots filled or the time window exp
 - Your slot number (1st, 2nd, 3rd, etc.) is assigned completely at random after all registrations are in
 
 You will receive a **DM** from the bot confirming:
+
 - Which Pokémon was accepted
 - Your randomly assigned slot number
 - What to expect next
@@ -108,7 +111,8 @@ When the auction reaches your slot in the 💰〢auction-bid channel, the bot wi
 You have **60 seconds** to post the live Pokétwo info command for your Pokémon in the bid channel. This is the live, up-to-date info embed that bidders will use to evaluate your Pokémon.
 
 **The command to post:**
-```
+
+```text
 @poketwo#8236 i <pokémon number>
 ```
 
@@ -125,6 +129,7 @@ If you already know your Pokémon's display number, use that directly. The bot w
 Before bidding opens on your slot, a **15-second community vote** takes place where members decide if your Pokémon is worth auctioning. If **60% or more** of voters vote No, your slot is skipped.
 
 If your slot is skipped by vote:
+
 - You will receive a **detailed DM** showing the full vote breakdown, including how many people voted yes and no
 - You can open a **support ticket** in the main Helixia server if you believe the skip was unwarranted
 
