@@ -15,10 +15,7 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": [
-              "introduction",
-              "commands"
-            ]
+            "pages": ["introduction", "commands"]
           },
           {
             "group": "Economy",
@@ -71,6 +68,7 @@
             "group": "Community",
             "pages": [
               "community/vanity",
+              "community/server-tag",
               "community/giveaways",
               "community/suggestions",
               "community/server-boosting"
