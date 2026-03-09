@@ -35,6 +35,77 @@ The claim panel lives in a dedicated [claim](https://discord.com/channels/145985
   </Step>
 </Steps>
 
+---
+
+## What is a Market ID?
+
+<Info>
+  This is one of the most common points of confusion for new members. Please read this section carefully before submitting a claim.
+</Info>
+
+The **Market ID** is a unique listing number that Pokétwo assigns when you put a Pokémon up for sale on its marketplace. The Helixia bot uses this ID to find your listing and purchase it on your behalf — that's how your Pokécoins are delivered to you as actual Pokétwo currency.
+
+Here's exactly how to get your Market ID:
+
+<Steps>
+  <Step title="Pick a Pokémon to list">
+    Choose any Pokémon from your Pokétwo collection that you want to put up for sale. The Pokémon itself doesn't matter — what matters is the **price** you set, which should equal the amount of Pokécoins you want to claim.
+  </Step>
+  <Step title="List it on the Pokétwo market">
+    Use the Pokétwo bot command to list your Pokémon on the market at the price matching your claim amount. For example, if you want to claim 200,000 PC, list the Pokémon for **200,000 Pokécoins**.
+  </Step>
+  <Step title="Copy the Market ID Pokétwo gives you">
+    After you list the Pokémon, Pokétwo will respond with a confirmation message that includes a **Market ID** — a short number that identifies your listing. It looks something like `#123456`. Copy that number (just the digits, no `#` needed).
+  </Step>
+  <Step title="Paste it into the claim form">
+    When you click **Claim Pokécoins** on the Helixia panel and the form opens, paste that Market ID into the **Market ID** field. The bot will then go and purchase your listing, sending the Pokécoins directly to your Pokétwo account.
+  </Step>
+</Steps>
+
+<Warning>
+  Make sure your listing is still **active** when you submit your claim. If the listing expires or is cancelled before the bot processes your request, the claim will fail. Double-check the listing price matches the amount you're claiming.
+</Warning>
+
+---
+
+## When the Panel Says "Stopped" — What Does That Mean?
+
+<Warning>
+  **Please do not contact staff asking about a stopped panel.** The answer will always be one of the two reasons explained below, and the panel will reopen on its own once the issue is resolved. Staff cannot speed up this process.
+</Warning>
+
+If you visit the claim channel and the panel is showing as **stopped** or the claim button is unavailable, there is no need to panic. This is a known, expected state that happens from time to time. There are exactly **two reasons** this can happen:
+
+### Reason 1 — The Bot is Experiencing an Outage
+
+The Helixia bot (or the underlying systems it depends on, such as Pokétwo) may be temporarily down, restarting, or experiencing technical difficulties. During an outage, the claim panel is automatically paused to prevent any failed or stuck claims.
+
+- This is temporary. The panel will resume automatically once the bot is back online and stable.
+- You do not need to do anything. Your balance is completely safe and nothing is lost.
+- There is no ETA staff can give you — outages resolve when they resolve.
+
+### Reason 2 — The Panel Has Run Out of Pokécoins
+
+The claim panel is funded by a dedicated Pokécoins balance that the bot uses to purchase your Pokétwo listings. If that balance runs out, the panel **cannot process any more claims** and will stop automatically until it is refilled.
+
+- Once the panel's balance is topped up by the server's management team, it will **automatically resume** and continue processing the queue.
+- This is a routine occurrence. It simply means the panel has been busy and a lot of claims have been processed — a good thing!
+- Again, your balance and any pending queue entries are **completely safe**. Nothing is lost, and your position in the queue is preserved.
+
+### What You Should Do
+
+Honestly? **Nothing.** Just check back later. The panel will be open again once the issue — whether it's an outage or a balance refill — has been handled.
+
+<Tip>
+  Keep an eye on the server's announcements channel. If there is a significant outage or the panel is going to be down for an extended period, a notice will be posted there.
+</Tip>
+
+<Warning>
+  **Do not open a support ticket or ping staff asking "why is the panel stopped?" or "when will it be back up?"** — The answer is always one of the two reasons above, and staff will not be able to give you a specific time. Repeatedly asking will not make the panel come back any faster.
+</Warning>
+
+---
+
 ## Important Rules
 
 <Warning>
@@ -55,18 +126,26 @@ The claim queue can hold a maximum of **30 requests** at a time. If the queue is
 
 ### What Happens if Something Goes Wrong
 
-If the bot encounters an issue processing your claim (for example, the listing ID is invalid), you may receive an error cooldown. The bot will DM you with details about what went wrong.
+If the bot encounters an issue processing your claim (for example, the listing ID is invalid or has expired), you may receive an error cooldown. The bot will DM you with details about what went wrong.
+
+---
 
 ## Tips for Smooth Claims
 
 <AccordionGroup>
   <Accordion title="Double-check your Market ID">
-    The most common reason claims fail is an incorrect or expired Market ID. Make sure the listing is active and the ID is correct before submitting.
+    The most common reason claims fail is an incorrect or expired Market ID. Make sure the listing is still active on the Pokétwo market, that the price matches your claim amount exactly, and that you copied the ID correctly before submitting.
+  </Accordion>
+  <Accordion title="List your Pokémon right before claiming">
+    Pokétwo market listings can expire. To avoid your listing expiring before the bot processes your claim, try to list your Pokémon and submit your claim form in quick succession — don't list hours in advance.
   </Accordion>
   <Accordion title="Claim in larger amounts">
-    Since there's a 1-hour cooldown between claims, it's more efficient to save up and claim larger amounts rather than making many small claims.
+    Since there's a 1-hour cooldown between claims, it's more efficient to save up and claim larger amounts rather than making many small claims. This also means fewer market listings you need to manage.
   </Accordion>
   <Accordion title="Keep your DMs open">
-    The bot will DM you with claim status updates. If your DMs are closed, you won't receive these notifications (though the claim will still process).
+    The bot will DM you with claim status updates, including queue position notifications and final confirmation when your claim is complete. If your DMs are closed, you won't receive these notifications — though the claim will still process normally.
+  </Accordion>
+  <Accordion title="If the panel is stopped, just wait">
+    As explained above, a stopped panel always resolves on its own. The two possible reasons are a bot outage or the panel running out of Pokécoins. Either way, checking back in a little while is all you need to do.
   </Accordion>
 </AccordionGroup>
