@@ -46,7 +46,7 @@ When registration opens, the auction-register channel will unlock and a message 
 
 <Steps>
   <Step title="Run the Pokétwo info command on your Pokémon">
-    In the **auction-register** channel, use the Pokétwo info command for the specific Pokémon you want to sell:
+    In the **auction-register** channel, use the Pokétwo info command for the specific Pokémon you want to sell:
 
     ```text
     @poketwo#8236 i <pokémon number>
@@ -54,16 +54,16 @@ When registration opens, the auction-register channel will unlock and a message 
 
     For example: `@poketwo#8236 i 5785`
   </Step>
-  <Step title="Reply to your own info embed">
-    Pokétwo will respond with the info embed for your Pokémon. You need to **reply directly to that Pokétwo response** (not to your original command message). This reply is your submission — the bot reads it as a registration.
+  <Step title="Pokétwo replies — you're registered">
+    Pokétwo will automatically reply to your command with the info embed for that Pokémon. That reply is your registration — the auction bot detects it instantly. You don't need to do anything else.
   </Step>
   <Step title="Wait for confirmation">
-    The bot will reply to your submission message confirming your slot has been secured, along with your randomly assigned slot number once randomization completes.
+    The auction bot will reply to Pokétwo's embed confirming your slot has been secured, along with your randomly assigned slot number once randomization completes.
   </Step>
 </Steps>
 
 <Warning>
-  Only replies to the **Pokétwo info embed message** count. Do not reply to your own command message. Do not post the info on its own without replying. The submission only registers when the bot detects a reply to a valid Pokétwo info embed.
+  Make sure you run the info command **in the auction-register channel** while registration is open. Commands run in other channels, or run before/after the window, will not be detected. One submission per seller per session.
 </Warning>
 
 ### Slot-Based vs. Time-Based Registration
@@ -103,9 +103,9 @@ You will receive a **DM** from the bot confirming:
 
 ## Step 4 — Be Ready When Your Slot Is Called
 
-When the auction reaches your slot in the 💰〢auction-bid channel, the bot will:
+When the auction reaches your slot in the auction-bid channel, the bot will:
 
-1. **Tag you** in the bid channel, telling you it's your turn
+1. **Ping you** in the bid channel, telling you it's your turn
 2. **Send you a DM** letting you know your turn has arrived with a link to the message
 
 You have **60 seconds** to post the live Pokétwo info command for your Pokémon in the bid channel. This is the live, up-to-date info embed that bidders will use to evaluate your Pokémon.

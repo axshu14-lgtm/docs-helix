@@ -20,17 +20,17 @@ The same eligibility rules that apply to sellers also apply to bidders:
 
 ## How to Place a Bid
 
-When a Pokémon's bidding phase is open, the 💰〢auction-bid channel unlocks and you can place bids by **simply typing the amount**. Nothing else — just the number.
+When a Pokémon's bidding phase is open, the auction-bid channel unlocks and you can place bids by **simply typing the amount**. Nothing else — just the number.
 
 Valid formats:
 
-| What you type | What it means |
-|---|---|
-| `10000` | 10,000 pc |
-| `10,000` | 10,000 pc |
-| `10k` | 10,000 pc |
-| `1m` | 1,000,000 pc |
-| `2.5m` | Not valid — use `2500k` or `2500000` |
+| What you type | What it means                        |
+| ------------- | ------------------------------------ |
+| `10000`       | 10,000 pc                            |
+| `10,000`      | 10,000 pc                            |
+| `10k`         | 10,000 pc                            |
+| `1m`          | 1,000,000 pc                         |
+| `2.5m`        | Not valid — use `2500k` or `2500000` |
 
 <Warning>
   Your message must contain **only** the bid amount — nothing else. Bids like `10k please`, `10k pc`, or `10k!` will be rejected because of the extra text. Type only the number, with an optional `k` or `m` suffix.
@@ -40,9 +40,7 @@ Valid formats:
 
 ## The Starting Bid (SB)
 
-Every Pokémon enters bidding with a **Starting Bid** set by the seller. Your first bid must be **at or above** the starting bid. The bot will silently ignore any bid below it.
-
-The SB is displayed clearly in the bidding embed at the top of each slot. Make sure you see the SB before placing your first bid.
+Every Pokémon in Helixia auctions starts at a **fixed Starting Bid of 1,000 pc**. This applies to every slot, every session — there is no custom SB set by sellers. Your first bid must be at least 1,000 pc.
 
 ---
 
@@ -50,11 +48,11 @@ The SB is displayed clearly in the bidding embed at the top of each slot. Make s
 
 The minimum amount your bid must exceed the current highest bid by depends on where the current highest bid sits. This is a **dynamic increment system**:
 
-| Current Highest Bid | Minimum Increment |
-|---|---|
-| Below 1,000,000 pc | **1,000 pc** |
-| 1,000,000 pc — 4,999,999 pc | **50,000 pc** |
-| 5,000,000 pc and above | **100,000 pc** |
+| Current Highest Bid         | Minimum Increment |
+| --------------------------- | ----------------- |
+| Below 1,000,000 pc          | **1,000 pc**      |
+| 1,000,000 pc — 4,999,999 pc | **50,000 pc**     |
+| 5,000,000 pc and above      | **100,000 pc**    |
 
 The bot will show the **minimum next bid** after every accepted bid so you always know exactly what you need to place.
 
@@ -84,14 +82,14 @@ This system exists to prevent accidental misbids at high amounts. **Misbids will
 
 ## The Bidding Timer
 
-Each slot has a **60-second countdown**. The timer starts when bidding opens and **resets to 60 seconds with every valid new bid**. This means:
+Each slot has a **30-second countdown**. The timer starts when bidding opens and **resets to 30 seconds with every valid new bid**. This means:
 
 - Low-interest Pokémon may sell in as little as 60 seconds
 - Highly competitive Pokémon can run for many minutes if bids keep coming in
 - A **"Final Seconds"** warning is posted when ~5 seconds remain with no new bids
 - A **10-second reminder** is also periodically sent showing the current highest bid and minimum next bid
 
-When the 60 seconds fully expire with no new bid, the auction closes and the highest bidder wins.
+When the 30 seconds fully expire with no new bid, the auction closes and the highest bidder wins.
 
 ---
 
@@ -136,10 +134,10 @@ See the [Completing a Trade guide](/auctions/completing-a-trade) for exactly wha
 
 ## What Happens if a Pokémon Gets No Bids?
 
-If the 60-second timer expires without a single valid bid being placed, the Pokémon is marked as **Unsold**. The seller receives nothing, the slot is logged as unsold, and the auction moves to the next registered Pokémon.
+If the 30-second timer expires without a single valid bid being placed, the Pokémon is marked as **Unsold**. The seller receives nothing, the slot is logged as unsold, and the auction moves to the next registered Pokémon.
 
 This typically happens when:
-- The starting bid is set too high relative to the Pokémon's perceived value
+
 - The Pokémon is not desirable enough to attract any bidders
 - The session has low attendance
 
