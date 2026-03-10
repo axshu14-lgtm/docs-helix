@@ -1,0 +1,160 @@
+---
+title: "Official Bots"
+description: "Meet the four custom bots built and owned by Helixia — each one a first of its kind."
+icon: "robot"
+---
+
+Helixia operates a suite of four fully custom Discord bots, each built in-house from the ground up. These are not modified public bots or repurposed open-source projects — every line of code was written specifically for the problems they solve. Together, they power everything from the server economy to live auctions to community events to server security.
+
+<Note>
+  All four bots are **available for purchase** as a lifetime license. There are no monthly or yearly subscription fees — you pay once and the bot is yours to run indefinitely. The source code itself is not sold; what you receive is full access to a deployed, hosted instance of the bot configured for your server. Pricing is not listed publicly. To discuss pricing, availability, and setup, **DM the server owner directly**.
+</Note>
+
+---
+
+## A Note on Pioneering
+
+Every bot listed on this page represents a genuine first in Discord bot development. As of the time these bots were built and deployed, **no other bots existed with these specific capabilities** — not publicly, not privately, not anywhere we are aware of. These systems were designed to solve problems that had never been solved before in the Discord ecosystem, and they were built entirely from scratch to do it.
+
+Even if bots with similar functionality are developed in the future, **we are the originals**. The architecture, the systems, and the ideas behind these bots were pioneered here.
+
+---
+
+## Helixia
+
+**The all-in-one Pokécoin economy and community engagement bot.**
+
+Helixia is the core bot powering the entire server. It manages a complete, self-contained economy built around Pokécoins — from earning them to spending them to cashing them out — and handles every layer of community engagement on top of that.
+
+### What It Does
+
+The Helixia bot is the engine behind everything members experience day to day in the server:
+
+- **Full Pokécoin Economy** — Members earn Pokécoins through daily quests, message activity, mystery boxes, events, gambling, level-up milestones, and achievements. Every source is tracked, logged, and transparent.
+- **Claim System** — Members convert their Helixia Pokécoins into real Pokétwo currency through a fully automated claim panel that interfaces directly with the Pokétwo marketplace using Market IDs. The bot purchases the member's live market listing on their behalf.
+- **Deposit System** — The inverse of claiming: members transfer Pokécoins from their Pokétwo wallet into their Helixia balance. The bot creates the market listing itself; the member just purchases it.
+- **Daily Quests & Streaks** — Three rotating daily quests with a completion bonus, a 7-day streak system with escalating daily bonuses, and a weekend multiplier. Quests reset at midnight IST automatically.
+- **Mystery Boxes** — Earned through message activity, vanity status, and server tag time. Opened with a single command for random Pokécoin rewards.
+- **Gambling System** — A full PvP gambling suite including High-Low, Death Roll, Buckshot Roulette, and Pokémon Rand — with profiles, leaderboards, and formatted match history.
+- **Vanity Rewards** — Passively tracks members who keep the server's invite link in their Discord status and rewards them with mystery boxes over time, second by second.
+- **Server Tag Rewards** — Tracks members who display the server's Discord tag on their profile and rewards them every 72 hours. Helixia was the **first server in Discord history** to implement a reward system like this.
+- **Achievements** — Six achievement categories (Messages, Vanity Time, Server Tag Time, Pokémon Sold, Auctions Won, Gambling) with Bronze through Champion tiers, each carrying massive one-time Pokécoin payouts.
+- **Leveling Integration** — Listens for level role assignments from the Arcane bot and automatically credits level milestone rewards (up to 5,000,000 PC for Level 100).
+- **Full Reward Transparency** — Every automated reward, transfer, claim, deposit, and payment is recorded in dedicated read-only log channels visible to all members.
+- **Giveaways, Boosting, Suggestions** — Built-in giveaway system with eligibility checks, weekly booster payment tracking, and a community suggestion panel.
+
+### Why It's Exceptional
+
+Most Discord economy bots offer points you can never actually cash out. Helixia's economy is backed by **real Pokétwo currency** — the Pokécoins members earn are redeemable for actual in-game value through the claim system. The entire chain from earning to spending to claiming is automated and requires zero manual intervention from staff.
+
+The depth of the reward ecosystem — vanity tracking, server tag tracking, quest streaks, box systems, achievements, level rewards, gambling, events — all running simultaneously and logging every action transparently — has no equivalent in any other single Discord bot.
+
+---
+
+## Sigma
+
+**The fully automated live auction bot for Pokémon.**
+
+Sigma powers Helixia's daily Pokémon auctions — three live sessions per day, fully automated from start to finish. It handles everything: creating the auction environment, managing registrations, running live bidding, verifying trades, and cleaning up afterward, all without staff needing to do anything manually.
+
+### What It Does
+
+- **Daily Temporary Server** — Every morning at 8:00 AM IST, Sigma automatically creates a fresh temporary Discord server exclusively for that day's auctions. When all three sessions are complete and every trade is resolved, the server is automatically deleted. A new one is created the next morning.
+- **Three Scheduled Sessions Daily** — Auctions run at 6:00 PM, 9:00 PM, and 11:30 PM IST. Each session is independently scheduled via cron jobs and runs without any manual trigger.
+- **Pokétwo-Integrated Registration** — Sigma listens for real Pokétwo info embeds posted in the registration channel. When a seller posts their Pokémon's info using the Pokétwo bot, Sigma detects and validates the embed automatically — no form to fill out, no extra command to run.
+- **Fair Slot Randomization** — After registration closes, all accepted submissions are shuffled with a verifiably fair randomization algorithm. Submitting first gives you no advantage whatsoever.
+- **Community Vote System** — Before every single slot goes to bidding, a 15-second community vote takes place. If 60% or more of voters say No, the slot is skipped. Every vote is logged with full voter lists, and the seller receives a detailed DM with the complete breakdown.
+- **Live Real-Time Bidding** — Sigma processes bids as plain messages in the bid channel. It enforces a dynamic increment system (1k/50k/100k tiers), a 60-second resetting timer, a 30M PC hard cap, and a high-bid confirmation flow for bids over 1M PC.
+- **Pokétwo Presence Verification** — Before any session can begin, Sigma checks that the Pokétwo bot has actually joined the temp server. If Pokétwo is offline or hasn't joined, the session is held until it's ready.
+- **Automatic Trade Thread Creation** — When a bid is won, Sigma instantly creates a private thread between buyer and seller and populates it with a trade checklist. No staff involvement needed.
+- **Trade Verification** — Sigma monitors the trade thread and reads Pokétwo trade confirmation embeds in real time. It verifies that the correct Pokémon and exact Pokécoin amount are included before marking the trade as complete.
+- **Dispute Escalation** — If a trade contains incorrect items and is confirmed anyway, Sigma automatically escalates the dispute to a staff channel with full context and a transcript link.
+- **HTML Transcript Generation** — Every auction slot — whether sold, unsold, or skipped — generates a complete HTML transcript of the channel that is automatically hosted and linked in the logs.
+- **Auction Blacklist** — Staff can blacklist users with a configurable expiry. Blacklisted users are pre-emptively banned from the temp server the moment it's created.
+- **Stats and Leaderboards** — Every sale, bid, and outcome is tracked per user. Members can view their full auction profile, career stats, and leaderboard rankings.
+
+### Why It's Exceptional
+
+No other Discord bot automates the entire auction lifecycle the way Sigma does — from spinning up a fresh server every morning to deleting it at night, with live Pokétwo integration throughout. The combination of Pokétwo embed detection, real-time trade monitoring, community voting, and automated server management makes Sigma the **first fully automated live Pokémon auction system** ever built for Discord.
+
+---
+
+## Mogger
+
+**The automated profile picture event organizer.**
+
+Mogger runs Helixia's PFP Events — community contests where members compete to see who has the best profile picture. The entire event lifecycle, from submission collection to voting to leaderboard generation, is handled entirely by the bot.
+
+### What It Does
+
+- **Two-Phase Event Architecture** — Mogger runs events in two distinct phases: a registration phase where members submit their PFPs, followed by a voting phase where the community votes on all approved entries. Both phases have configurable durations and transition automatically.
+- **DM-Based Submission Flow** — When a member clicks the Participate button, Mogger immediately DMs them and opens a 3-minute private window for them to send their profile picture. This keeps the registration channel clean and ensures every submission is a deliberate, private action.
+- **Staff Review System** — Every submission goes to a dedicated staff review channel before it enters the voting pool. Staff approve or reject each entry. Rejected entries never appear in voting. This prevents inappropriate or invalid images from making it into the contest.
+- **Account Age Verification** — Mogger checks that both participants and voters meet the minimum account age requirement (30 days). This prevents freshly created alt accounts from flooding the event.
+- **Self-Roles Voting Gate** — To vote, a member must have a configured minimum number of self-assignable roles. This ensures votes come from members who are genuinely engaged with the server, not drive-by accounts.
+- **Vote Isolation** — Members cannot vote for their own submission. Votes are recorded individually and tied to the voter's account.
+- **Auto-Updating Graphical Leaderboard** — Mogger generates a live leaderboard image using Canvas and updates it every 60 seconds in the designated leaderboard channel throughout the voting phase. Members can watch the rankings shift in real time.
+- **Voter Transparency** — Each entry has a Voters button that shows exactly who has voted for it.
+- **Leave Detection** — If a member who voted leaves the server during the event, their votes are handled appropriately. The bot monitors member removals.
+- **Automatic Event End** — When the voting duration expires, the event ends on its own. Winners are announced automatically without any staff action.
+- **Full Command Suite** — Both prefix commands (`%`) and slash commands are supported, covering event start/end, channel setup, duration configuration, leaderboards, profiles, and event info.
+- **Persistent State** — All event data, submissions, and votes are stored in MongoDB. The bot can restart at any point without losing any event state.
+
+### Why It's Exceptional
+
+Running a large-scale community voting event on Discord without Mogger requires enormous manual effort from staff — collecting images, posting them, counting votes, managing submissions. Mogger makes the entire process zero-effort after initial configuration. The DM-based submission system, staff review gate, graphical auto-updating leaderboard, and full vote integrity checks make Mogger the **first bot to fully automate Discord PFP contests** at this level of sophistication.
+
+---
+
+## Synchronic
+
+**The intelligent automatic invite checker.**
+
+Synchronic is a Discord invite tracking bot with a powerful standout feature: Automatic Invite Checking (AIC) — a configurable verification pipeline that validates new members against a set of quality requirements before their invite counts as legitimate.
+
+### What It Does
+
+- **Comprehensive Invite Tracking** — Synchronic tracks every invite in the server and records exactly who invited whom, with full statistics per user: effective invites, total joins, leaves, fakes, and bonus invites.
+- **Invite Leaderboard** — Shows the top inviters in the server with a paginated leaderboard that updates as the data changes.
+- **Detailed Invite History** — Use `-invited @user` to see a paginated list of every person a specific member has invited, including their join date and current membership status.
+- **Invite Info** — Look up any invite code to see its detailed statistics, max uses, expiry, and originating channel.
+- **Welcome & Leave Messages** — Fully customizable join and leave messages with a rich variable system supporting user info, server info, inviter info, and invite details (e.g., `{inviter}`, `{server.memberCount}`, `{invite.code}`).
+- **Bonus Invite Management** — Administrators can manually add or remove bonus invites from any member's count, with optional reason logging.
+- **Invite Reload** — Force-recache all server invites when the tracking seems out of sync.
+
+### Automatic Invite Checking (AIC)
+
+AIC is Synchronic's flagship feature — a configurable gating system that determines whether a new member's presence counts as a "valid" invite. Requirements are toggled individually through an interactive dropdown menu:
+
+| Requirement | What It Checks |
+|---|---|
+| **Inviter Min Account Age** | The person who sent the invite must have an account older than a configured number of days |
+| **Invited Min Account Age** | The new member joining must have an account older than a configured threshold |
+| **Invited Min Self-Roles** | The new member must assign a configured minimum number of self-roles |
+| **DM History Required** | Verifies a communication history exists, filtering out blank or bot-adjacent accounts |
+| **Inviter Vanity Check** | The inviter must have the server's vanity code in their bio or status |
+
+- **Payout System** — When an invite passes all AIC requirements, the inviter receives a configurable reward. Payout timing is adjustable (immediate, or after a configurable delay in hours) to account for retention.
+- **Penalty System** — Deduct from invite counts for fake invites, users who leave after joining, and users who rejoin. Each penalty type is configured separately.
+- **Screenshot Forwarding** — For manual verification steps, AIC can forward screenshots to a designated channel with optional staff role pings.
+- **Self-Roles Configuration** — Define up to 25 self-assignable roles directly in Synchronic and set the minimum number members must claim for AIC compliance.
+
+### Why It's Exceptional
+
+Standard invite trackers simply count who invited who. Synchronic goes several layers deeper: it doesn't just track invites — it *validates* them. The AIC system transforms invite tracking from a raw count into a quality metric, ensuring that only genuinely engaged members count toward an inviter's score. The combination of account age gating, vanity/bio checking, self-roles requirements, payout timing, and penalty deductions makes Synchronic the **most advanced invite validation system** ever built as a Discord bot.
+
+---
+
+## Purchasing a Bot
+
+All four bots are available for **lifetime access**. You pay once — there is no monthly fee, no yearly renewal, and no subscription of any kind. The bot runs for your server for as long as you want it.
+
+<Info>
+  **The source code is not for sale.** What you purchase is a fully deployed, configured, and running instance of the bot for your server. All updates and maintenance are handled on our end.
+</Info>
+
+To discuss pricing, server compatibility, and setup for any of the four bots, **DM the server owner directly**. Pricing is determined on a case-by-case basis and is not listed publicly.
+
+<Card title="Join Helixia" icon="discord" href="https://discord.gg/helixia">
+  Join the Helixia server to see all four bots running live, ask questions, and get in touch with the owner.
+</Card>

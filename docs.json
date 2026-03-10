@@ -15,7 +15,7 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": ["introduction", "commands"]
+            "pages": ["introduction", "commands", "official-bots"]
           },
           {
             "group": "Economy",
