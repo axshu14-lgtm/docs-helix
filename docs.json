@@ -88,6 +88,10 @@
               "community/reporting-bugs",
               "community/reward-logs"
             ]
+          },
+          {
+            "group": "Miscellaneous",
+            "pages": ["miscellaneous/promotions", "miscellaneous/pfp-event"]
           }
         ]
       }
